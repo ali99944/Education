@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8">
+
+    <title>Product List</title>
+
+    <link rel="shortcut icon" href="">
+	<script src="https://kit.fontawesome.com/0d1ebe0b10.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="http://efood-admin.6amtech.com/public/assets/admin/css/vendor.min.css">
+    <link rel="stylesheet" href="http://efood-admin.6amtech.com/public/assets/admin/vendor/icon-set/style.css">
+
+    <link rel="stylesheet" href="http://efood-admin.6amtech.com/public/assets/admin/css/theme.minc619.css?v=1.0">
+    <meta name="csrf-token" content="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8">
+    <style>
+        .scroll-bar {
+            max-height: calc(100vh - 100px);
+            overflow-y: auto !important;
+        }
+
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 1px #cfcfcf;
+            /*border-radius: 5px;*/
+        }
+
+        ::-webkit-scrollbar {
+            width: 3px;
+            height: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            /*border-radius: 5px;*/
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FC6A57;
+        }
+
+        .flex-start {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .flex-end {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .flex-inline {
+            display: inline-flex;
+        }
+
+        .flex-between {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+    <script
+        src="http://efood-admin.6amtech.com/public/assets/admin/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside-mini-cache.js"></script>
+    <link rel="stylesheet" href="http://efood-admin.6amtech.com/public/assets/admin/css/toastr.css">
+</head>
+
+<body class="footer-offset">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="loading" style="display: none;">
+                    <div style="position: fixed;z-index: 9999; left: 40%;top: 37% ;width: 100%">
+                        <img width="200" src="http://efood-admin.6amtech.com/public/assets/admin/img/loader.gif">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="styleSwitcherDropdown" class="hs-unfold-content sidebar sidebar-bordered sidebar-box-shadow"
+        style="width: 35rem;">
+        <div class="card card-lg border-0 h-100">
+            <div class="card-header align-items-start">
+                <div class="mr-2">
+                    <h3 class="card-header-title">Front Builder</h3>
+                    <p>Customize your overview page layout. Choose the one that best fits your needs.</p>
+                </div>
+
+                <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-dark" href="javascript:;"
+                    data-hs-unfold-options='{
+                  "target": "#styleSwitcherDropdown",
+                  "type": "css-animation",
+                  "animationIn": "fadeInRight",
+                  "animationOut": "fadeOutRight",
+                  "hasOverlay": true,
+                  "smartPositionOff": true
+                 }'>
+                    <i class="tio-clear tio-lg"></i>
+                </a>
+
+            </div>
+
+            <div class="card-body sidebar-scrollbar">
+                <h4 class="mb-1">Layout skins <span id="js-builder-disabled" class="badge badge-soft-danger"
+                        style="opacity: 0">Disabled</span></h4>
+                <p>3 kinds of layout skins to choose from.</p>
+                <div class="row gx-2 mb-5">
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="layoutSkinsRadio"
+                                    id="layoutSkinsRadio1" checked value="default">
+                                <label class="custom-checkbox-card-label" for="layoutSkinsRadio1">
+                                    <img class="custom-checkbox-card-img"
+                                        src="http://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Default</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="layoutSkinsRadio"
+                                    id="layoutSkinsRadio2" value="navbar-dark">
+                                <label class="custom-checkbox-card-label" for="layoutSkinsRadio2">
+                                    <img class="custom-checkbox-card-img"
+                                        src="http://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Dark</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="layoutSkinsRadio"
+                                    id="layoutSkinsRadio3" value="navbar-light">
+                                <label class="custom-checkbox-card-label" for="layoutSkinsRadio3">
+                                    <img class="custom-checkbox-card-img"
+                                        src="http://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Light</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h4 class="mb-1">Sidebar layout options</h4>
+                <p>Choose between standard navigation sizing, mini or even compact with icons.</p>
+                <div class="row gx-2 mb-5">
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="sidebarLayoutOptions"
+                                    id="sidebarLayoutOptions1" checked value="default">
+                                <label class="custom-checkbox-card-label" for="sidebarLayoutOptions1">
+                                    <img class="custom-checkbox-card-img"
+                                        src="http://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Default</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="sidebarLayoutOptions"
+                                    id="sidebarLayoutOptions2" value="navbar-vertical-aside-compact-mode">
+                                <label class="custom-checkbox-card-label" for="sidebarLayoutOptions2">
+                                    <img class="custom-checkbox-card-img"
+                                        src="http://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Compact</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="sidebarLayoutOptions"
+                                    id="sidebarLayoutOptions3" value="navbar-vertical-aside-mini-mode">
+                                <label class="custom-checkbox-card-label" for="sidebarLayoutOptions3">
+                                    <img class="custom-checkbox-card-img"
+                                        src="http://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Mini</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h4 class="mb-1">Header layout options</h4>
+                <p>Choose the primary navigation of your header layout.</p>
+                <div class="row gx-2">
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="headerLayoutOptions"
+                                    id="headerLayoutOptions1" value="single">
+                                <label class="custom-checkbox-card-label" for="headerLayoutOptions1">
+                                    <img class="custom-checkbox-card-img"
+                                        src="http://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Default (Fluid)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="headerLayoutOptions"
+                                    id="headerLayoutOptions2" value="single-container">
+                                <label class="custom-checkbox-card-label" for="headerLayoutOptions2">
+                                    <img class="custom-checkbox-card-img"
+                                        src="http://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Default (Container)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="headerLayoutOptions"
+                                    id="headerLayoutOptions3" value="double">
+                                <label class="custom-checkbox-card-label" for="headerLayoutOptions3">
+                                    <img class="custom-checkbox-card-img"
+                                        src="http://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Double line (Fluid)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center mt-2">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="headerLayoutOptions"
+                                    id="headerLayoutOptions4" value="double-container">
+                                <label class="custom-checkbox-card-label" for="headerLayoutOptions4">
+                                    <img class="custom-checkbox-card-img"
+                                        src="http://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Double line (Container)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-footer">
+                <div class="row gx-2">
+                    <div class="col">
+                        <button type="button" id="js-builder-reset" class="btn btn-block btn-lg btn-white">
+                            <i class="tio-restore"></i> Reset
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" id="js-builder-preview" class="btn btn-block btn-lg btn-primary">
+                            <i class="tio-visible"></i> Preview
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="headerMain" class="d-none">
+        <header id="header"
+            class="navbar navbar-expand-lg navbar-fixed navbar-height navbar-flush navbar-container navbar-bordered">
+            <div class="navbar-nav-wrap">
+                <div class="navbar-brand-wrapper">
+
+                    <a class="navbar-brand" href="http://efood-admin.6amtech.com/admin" aria-label="">
+                        <img class="navbar-brand-logo"
+                            onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img1.jpg'"
+                            src="http://efood-admin.6amtech.com/storage/app/public/restaurant/2021-02-27-603aa32c36d89.png"
+                            alt="Logo">
+                        <img class="navbar-brand-logo-mini"
+                            onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img1.jpg'"
+                            src="http://efood-admin.6amtech.com/storage/app/public/restaurant/2021-02-27-603aa32c36d89.png"
+                            alt="Logo">
+                    </a>
+
+                </div>
+                <div class="navbar-nav-wrap-content-left">
+
+                    <button type="button" class="js-navbar-vertical-aside-toggle-invoker close mr-3">
+                        <i class="tio-first-page navbar-vertical-aside-toggle-short-align" data-toggle="tooltip"
+                            data-placement="right" title="Collapse"></i>
+                        <i class="tio-last-page navbar-vertical-aside-toggle-full-align"
+                            data-template='<div class="tooltip d-none d-sm-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
+                            data-toggle="tooltip" data-placement="right" title="Expand"></i>
+                    </button>
+
+                </div>
+
+                <div class="navbar-nav-wrap-content-right">
+
+                    <ul class="navbar-nav align-items-center flex-row">
+                        <li class="nav-item d-none d-sm-inline-block">
+                            <div class="hs-unfold">
+                                <div style="background:white;padding: 9px;border-radius: 5px;">
+                                    <div class="topbar-text dropdown disable-autohide mr-3 text-capitalize">
+                                        <a class="topbar-link dropdown-toggle" href="#" data-toggle="dropdown"
+                                            style="color: black!important;">
+                                            en
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item pb-1"
+                                                    href="http://efood-admin.6amtech.com/admin/lang/en">
+                                                    <span style="text-transform: capitalize">English</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+
+                            <div class="hs-unfold">
+                                <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle"
+                                    href="http://efood-admin.6amtech.com/admin/message/list">
+                                    <i class="tio-messages-outlined"></i>
+                                </a>
+                            </div>
+
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+
+                            <div class="hs-unfold">
+                                <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle"
+                                    href="http://efood-admin.6amtech.com/admin/orders/list/pending">
+                                    <i class="tio-shopping-cart-outlined"></i>
+                                </a>
+                            </div>
+
+                        </li>
+                        <li class="nav-item">
+
+                            <div class="hs-unfold">
+                                <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper" href="javascript:;"
+                                    data-hs-unfold-options='{
+                                     "target": "#accountNavbarDropdown",
+                                     "type": "css-animation"
+                                   }'>
+                                    <div class="avatar avatar-sm avatar-circle">
+                                        <img class="avatar-img"
+                                            onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img1.jpg'"
+                                            src="http://efood-admin.6amtech.com/storage/app/public/admin/"
+                                            alt="Image Description">
+                                        <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                                    </div>
+                                </a>
+                                <div id="accountNavbarDropdown"
+                                    class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account"
+                                    style="width: 16rem;">
+                                    <div class="dropdown-item-text">
+                                        <div class="media align-items-center">
+                                            <div class="avatar avatar-sm avatar-circle mr-2">
+                                                <img class="avatar-img"
+                                                    onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img1.jpg'"
+                                                    src="http://efood-admin.6amtech.com/storage/app/public/admin/"
+                                                    alt="Image Description">
+                                            </div>
+                                            <div class="media-body">
+                                                <span class="card-title h5">admin</span>
+                                                <span class="card-text"><a href="/cdn-cgi/l/email-protection"
+                                                        class="__cf_email__"
+                                                        data-cfemail="4f2e2b2226210f2e2b222621612c2022">[email&#160;protected]</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="http://efood-admin.6amtech.com/admin/settings">
+                                        <span class="text-truncate pr-2" title="Settings">Settings</span>
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:" onclick="Swal.fire({
+                                    title: 'Do you want to logout ',
+                                    showDenyButton: true,
+                                    showCancelButton: true,
+                                    confirmButtonColor: '#FC6A57',
+                                    cancelButtonColor: '#363636',
+                                    confirmButtonText: 'Yes',
+                                    cancelButtonText: `No`,
+                                    }).then((result) => {
+                                    if (result.value) {
+                                    location.href='http://efood-admin.6amtech.com/admin/auth/logout';
+                                    } else{
+                                        Swal.fire({
+                                        title: 'Canceled',
+                                        confirmButtonText: 'Okay',
+                                        })
+                                    }
+                                    })">
+                                        <span class="text-truncate pr-2" title="Sign out">Sign out</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </header>
+    </div>
+    <div id="headerFluid" class="d-none"></div>
+    <div id="headerDouble" class="d-none"></div>
+    <div id="sidebarMain" class="d-none">
+        <aside
+            class="js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered  ">
+            <div class="navbar-vertical-container text-capitalize">
+                <div class="navbar-vertical-footer-offset">
+                    <div class="navbar-brand-wrapper justify-content-between">
+
+                        <a class="navbar-brand" href="https://efood-admin.6amtech.com/admin" aria-label="Front">
+                            <img class="navbar-brand-logo"
+                                onerror="this.src='https://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'"
+                                src="https://efood-admin.6amtech.com/storage/app/public/restaurant/2021-02-27-603aa32c36d89.png"
+                                alt="Logo">
+                            <img class="navbar-brand-logo-mini"
+                                onerror="this.src='https://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'"
+                                src="https://efood-admin.6amtech.com/storage/app/public/restaurant/2021-02-27-603aa32c36d89.png"
+                                alt="Logo">
+                        </a>
+
+
+                        <button type="button"
+                            class="js-navbar-vertical-aside-toggle-invoker navbar-vertical-aside-toggle btn btn-icon btn-xs btn-ghost-dark">
+                            <i class="tio-clear tio-lg"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="navbar-vertical-content">
+                        <ul class="navbar-nav navbar-nav-lg nav-tabs">
+
+                            <li class="navbar-vertical-aside-has-menu show">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link" href="./index.html"
+                                    title="Dashboards">
+                                    <i class="tio-home-vs-1-outlined nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        Dashboard
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <small class="nav-subtitle">Pos System</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:">
+                                    <i class="tio-shopping nav-icon"></i>
+                                    <span
+                                        class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">POS</span>
+                                </a>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub" style="display: none">
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./pos.html" title="Pos">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Pos</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./order list.html" title="Orders">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Orders
+                                                <span class="badge badge-info badge-pill ml-1">
+                                                    7
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <small class="nav-subtitle">Order Section</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:">
+                                    <i class="tio-shopping-cart nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        Order
+                                    </span>
+                                </a>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub" style="display: none">
+                                    <li class="nav-item ">
+                                        <a class="nav-link" href="./state_order_all.html" title="">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">
+                                                All
+                                                <span class="badge badge-info badge-pill ml-1">
+                                                    46
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./pendingorder.html" title="">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">
+                                                Pending
+                                                <span class="badge badge-soft-info badge-pill ml-1">
+                                                    23
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./confirm_order.html" title="">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">
+                                                Confirmed
+                                                <span class="badge badge-soft-success badge-pill ml-1">
+                                                    5
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./dlivered.html" title="">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">
+                                                Delivered
+                                                <span class="badge badge-success badge-pill ml-1">
+                                                    13
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./return_order.html" title="">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">
+                                                Returned
+                                                <span class="badge badge-soft-danger badge-pill ml-1">
+                                                    0
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./cancel.html" title="">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">
+                                                Canceled
+                                                <span class="badge badge-soft-dark badge-pill ml-1">
+                                                    2
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <small class="nav-subtitle">Product Section</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+
+
+
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:">
+                                    <i class="tio-premium-outlined nav-icon"></i>
+                                    <span
+                                        class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Product</span>
+                                </a>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub" style="display: none">
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./addprodact.html" title="Add new product">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Add New</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./productlist.html" title="Product list">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">List</span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+
+                          
+                            <li class="nav-item">
+                                <small class="nav-subtitle" title="Layouts">Business Section</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+
+                         
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                    href="./add_cupon.html">
+                                    <i class="tio-gift nav-icon"></i>
+                                    <span
+                                        class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Coupon</span>
+                                </a>
+                            </li>
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:">
+                                    <i class="tio-settings nav-icon"></i>
+                                    <span
+                                        class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Restaurant
+                                        Settings</span>
+                                </a>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub" style="display: none">
+
+                                    <li class="nav-item ">
+                                        <a class="nav-link "
+                                            href="./admin_setting.html">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Restaurant Setup</span>
+                                        </a>
+                                    </li>
+
+                                    
+                                </ul>
+                            </li>
+
+                            
+                            <li class="nav-item">
+                                <small class="nav-subtitle" title="Layouts">Deliveryman Section</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                    href="./add_driver.html">
+                                    <i class="tio-running nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        Register
+                                    </span>
+                                </a>
+                            </li>
+
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                    href="./deliverylist.html">
+                                    <i class="tio-filter-list nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        List
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                    href="./review.html">
+                                    <i class="tio-star-outlined nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        Reviews
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <small class="nav-subtitle" title="Documentation">Customer Section</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                    href="./custmer.html">
+                                    <i class="tio-poi-user nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        Customer List
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                    href="./point.html">
+                                    <i class="tio-format-points nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        Point History
+                                    </span>
+                                </a>
+                            </li>
+                            
+
+                            <li class="nav-item">
+                                <div class="nav-divider"></div>
+                            </li>
+                            <li class="nav-item">
+                                <small class="nav-subtitle" title="Report and analytics">Report and analytics</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:">
+                                    <i class="tio-report-outlined nav-icon"></i>
+                                    <span
+                                        class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Reports</span>
+                                </a>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub" style="display: none">
+                                    <li class="nav-item ">
+                                        <a class="nav-link "
+                                            href="./earning.html">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Earning Report</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./orderreport.html">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Order Report</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link "
+                                            href="./deliveryman-report.html">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">DeliveryMan Report</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link "
+                                            href="./proudctsale.html">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Product Report</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link "
+                                            href="./sale.html">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Sale Report</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item" style="padding-top: 100px">
+                                <div class=""></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </aside>
+    </div>
+    <div id="sidebarCompact" class="d-none">
+    </div>
+    <main id="content" role="main" class="main pointer-event">
+
+        <div class="content container-fluid">
+
+            <div class="page-header">
+                <div class="row align-items-center">
+                    <div class="col-sm mb-2 mb-sm-0">
+                        <h1 class="page-header-title"><i class="tio-filter-list"></i> Product List <span
+                                class="text-primary">(17)</span></h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row gx-2 gx-lg-3">
+                <div class="col-sm-12 col-lg-12 mb-3 mb-lg-2">
+
+                    <div class="card">
+
+                        <div class="card-header">
+                            <div class="row" style="width: 100%">
+                                <div class="col-12 col-md-3 mb-1 mb-md-0">
+                                    <form action="http://efood-admin.6amtech.com/admin/product/list" method="GET">
+                                        <div class="input-group">
+                                            <input id="datatableSearch_" type="search" name="search"
+                                                class="form-control" placeholder="Search" aria-label="Search" value=""
+                                                required autocomplete="off">
+                                            <div class="input-group-append">
+                                                <button type="submit" class="input-group-text"><i
+                                                        class="tio-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-0 col-sm-0 col-md-6"></div>
+                                <div class="col-12 col-md-3">
+                                    <a href="http://efood-admin.6amtech.com/admin/product/add-new"
+                                        class="btn btn-primary pull-right btn-block"><i class="tio-add-circle"></i> Add
+                                        Product</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="table-responsive datatable-custom">
+                            <table
+                                class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>##</th>
+                                        <th style="width: 30%">Name</th>
+                                        <th style="width: 25%">Image</th>
+                                        <th>Status</th>
+                                        <th>Price</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="set-rows">
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <span class="d-block font-size-sm text-body">
+                                                <a href="http://efood-admin.6amtech.com/admin/product/view/22">
+                                                    Buddy Zinger Combo
+                                                </a>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div
+                                                style="height: 100px; width: 100px; overflow-x: hidden;overflow-y: hidden">
+                                                <img src="http://efood-admin.6amtech.com/storage/app/public/product/2021-02-26-60389495f26f9.png"
+                                                    style="width: 100px"
+                                                    onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div style="padding: 10px;border: 1px solid;cursor: pointer"
+                                                onclick="location.href='http://efood-admin.6amtech.com/admin/product/status/22/0'">
+                                                <span class="legend-indicator bg-success"></span>Active
+                                            </div>
+                                        </td>
+                                        <td>12.00$</td>
+                                        <td>
+
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <i class="tio-settings"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item"
+                                                        href="http://efood-admin.6amtech.com/admin/product/edit/22">Edit</a>
+                                                    <a class="dropdown-item" href="javascript:"
+                                                        onclick="form_alert('product-22','Want to delete this item  ')">Delete</a>
+                                                    <form
+                                                        action="http://efood-admin.6amtech.com/admin/product/delete/22"
+                                                        method="post" id="product-22">
+                                                        <input type="hidden" name="_token"
+                                                            value="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8"> <input
+                                                            type="hidden" name="_method" value="delete">
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>
+                                            <span class="d-block font-size-sm text-body">
+                                                <a href="http://efood-admin.6amtech.com/admin/product/view/21">
+                                                    Chizza Meal
+                                                </a>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div
+                                                style="height: 100px; width: 100px; overflow-x: hidden;overflow-y: hidden">
+                                                <img src="http://efood-admin.6amtech.com/storage/app/public/product/2021-02-26-6038935d27cb8.png"
+                                                    style="width: 100px"
+                                                    onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div style="padding: 10px;border: 1px solid;cursor: pointer"
+                                                onclick="location.href='http://efood-admin.6amtech.com/admin/product/status/21/0'">
+                                                <span class="legend-indicator bg-success"></span>Active
+                                            </div>
+                                        </td>
+                                        <td>15.00$</td>
+                                        <td>
+
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <i class="tio-settings"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item"
+                                                        href="http://efood-admin.6amtech.com/admin/product/edit/21">Edit</a>
+                                                    <a class="dropdown-item" href="javascript:"
+                                                        onclick="form_alert('product-21','Want to delete this item  ')">Delete</a>
+                                                    <form
+                                                        action="http://efood-admin.6amtech.com/admin/product/delete/21"
+                                                        method="post" id="product-21">
+                                                        <input type="hidden" name="_token"
+                                                            value="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8"> <input
+                                                            type="hidden" name="_method" value="delete">
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>
+                                            <span class="d-block font-size-sm text-body">
+                                                <a href="http://efood-admin.6amtech.com/admin/product/view/20">
+                                                    Popcorn Rice Bowl
+                                                </a>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div
+                                                style="height: 100px; width: 100px; overflow-x: hidden;overflow-y: hidden">
+                                                <img src="http://efood-admin.6amtech.com/storage/app/public/product/2021-02-26-6038911d8ddfa.png"
+                                                    style="width: 100px"
+                                                    onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div style="padding: 10px;border: 1px solid;cursor: pointer"
+                                                onclick="location.href='http://efood-admin.6amtech.com/admin/product/status/20/0'">
+                                                <span class="legend-indicator bg-success"></span>Active
+                                            </div>
+                                        </td>
+                                        <td>10.00$</td>
+                                        <td>
+
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <i class="tio-settings"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item"
+                                                        href="http://efood-admin.6amtech.com/admin/product/edit/20">Edit</a>
+                                                    <a class="dropdown-item" href="javascript:"
+                                                        onclick="form_alert('product-20','Want to delete this item  ')">Delete</a>
+                                                    <form
+                                                        action="http://efood-admin.6amtech.com/admin/product/delete/20"
+                                                        method="post" id="product-20">
+                                                        <input type="hidden" name="_token"
+                                                            value="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8"> <input
+                                                            type="hidden" name="_method" value="delete">
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>
+                                            <span class="d-block font-size-sm text-body">
+                                                <a href="http://efood-admin.6amtech.com/admin/product/view/19">
+                                                    Zinger &amp; Pop
+                                                </a>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div
+                                                style="height: 100px; width: 100px; overflow-x: hidden;overflow-y: hidden">
+                                                <img src="http://efood-admin.6amtech.com/storage/app/public/product/2021-02-26-6038903ac16c7.png"
+                                                    style="width: 100px"
+                                                    onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div style="padding: 10px;border: 1px solid;cursor: pointer"
+                                                onclick="location.href='http://efood-admin.6amtech.com/admin/product/status/19/0'">
+                                                <span class="legend-indicator bg-success"></span>Active
+                                            </div>
+                                        </td>
+                                        <td>80.00$</td>
+                                        <td>
+
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <i class="tio-settings"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item"
+                                                        href="http://efood-admin.6amtech.com/admin/product/edit/19">Edit</a>
+                                                    <a class="dropdown-item" href="javascript:"
+                                                        onclick="form_alert('product-19','Want to delete this item  ')">Delete</a>
+                                                    <form
+                                                        action="http://efood-admin.6amtech.com/admin/product/delete/19"
+                                                        method="post" id="product-19">
+                                                        <input type="hidden" name="_token"
+                                                            value="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8"> <input
+                                                            type="hidden" name="_method" value="delete">
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>
+                                            <span class="d-block font-size-sm text-body">
+                                                <a href="http://efood-admin.6amtech.com/admin/product/view/18">
+                                                    Fresh Lime
+                                                </a>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div
+                                                style="height: 100px; width: 100px; overflow-x: hidden;overflow-y: hidden">
+                                                <img src="http://efood-admin.6amtech.com/storage/app/public/product/2021-02-26-60388f49daed1.png"
+                                                    style="width: 100px"
+                                                    onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div style="padding: 10px;border: 1px solid;cursor: pointer"
+                                                onclick="location.href='http://efood-admin.6amtech.com/admin/product/status/18/0'">
+                                                <span class="legend-indicator bg-success"></span>Active
+                                            </div>
+                                        </td>
+                                        <td>16.00$</td>
+                                        <td>
+
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <i class="tio-settings"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item"
+                                                        href="http://efood-admin.6amtech.com/admin/product/edit/18">Edit</a>
+                                                    <a class="dropdown-item" href="javascript:"
+                                                        onclick="form_alert('product-18','Want to delete this item  ')">Delete</a>
+                                                    <form
+                                                        action="http://efood-admin.6amtech.com/admin/product/delete/18"
+                                                        method="post" id="product-18">
+                                                        <input type="hidden" name="_token"
+                                                            value="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8"> <input
+                                                            type="hidden" name="_method" value="delete">
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>
+                                            <span class="d-block font-size-sm text-body">
+                                                <a href="http://efood-admin.6amtech.com/admin/product/view/17">
+                                                    Cola Bottle
+                                                </a>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div
+                                                style="height: 100px; width: 100px; overflow-x: hidden;overflow-y: hidden">
+                                                <img src="http://efood-admin.6amtech.com/storage/app/public/product/2021-02-26-60388ec47c870.png"
+                                                    style="width: 100px"
+                                                    onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div style="padding: 10px;border: 1px solid;cursor: pointer"
+                                                onclick="location.href='http://efood-admin.6amtech.com/admin/product/status/17/0'">
+                                                <span class="legend-indicator bg-success"></span>Active
+                                            </div>
+                                        </td>
+                                        <td>6.00$</td>
+                                        <td>
+
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <i class="tio-settings"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item"
+                                                        href="http://efood-admin.6amtech.com/admin/product/edit/17">Edit</a>
+                                                    <a class="dropdown-item" href="javascript:"
+                                                        onclick="form_alert('product-17','Want to delete this item  ')">Delete</a>
+                                                    <form
+                                                        action="http://efood-admin.6amtech.com/admin/product/delete/17"
+                                                        method="post" id="product-17">
+                                                        <input type="hidden" name="_token"
+                                                            value="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8"> <input
+                                                            type="hidden" name="_method" value="delete">
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>
+                                            <span class="d-block font-size-sm text-body">
+                                                <a href="http://efood-admin.6amtech.com/admin/product/view/16">
+                                                    Spicy Burger
+                                                </a>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div
+                                                style="height: 100px; width: 100px; overflow-x: hidden;overflow-y: hidden">
+                                                <img src="http://efood-admin.6amtech.com/storage/app/public/product/2021-02-24-60360c3059cae.png"
+                                                    style="width: 100px"
+                                                    onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div style="padding: 10px;border: 1px solid;cursor: pointer"
+                                                onclick="location.href='http://efood-admin.6amtech.com/admin/product/status/16/0'">
+                                                <span class="legend-indicator bg-success"></span>Active
+                                            </div>
+                                        </td>
+                                        <td>60.00$</td>
+                                        <td>
+
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <i class="tio-settings"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item"
+                                                        href="http://efood-admin.6amtech.com/admin/product/edit/16">Edit</a>
+                                                    <a class="dropdown-item" href="javascript:"
+                                                        onclick="form_alert('product-16','Want to delete this item  ')">Delete</a>
+                                                    <form
+                                                        action="http://efood-admin.6amtech.com/admin/product/delete/16"
+                                                        method="post" id="product-16">
+                                                        <input type="hidden" name="_token"
+                                                            value="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8"> <input
+                                                            type="hidden" name="_method" value="delete">
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>
+                                            <span class="d-block font-size-sm text-body">
+                                                <a href="http://efood-admin.6amtech.com/admin/product/view/11">
+                                                    Cheese Sandwich With Spicy Gri...
+                                                </a>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div
+                                                style="height: 100px; width: 100px; overflow-x: hidden;overflow-y: hidden">
+                                                <img src="http://efood-admin.6amtech.com/storage/app/public/product/2021-02-01-60171610bf3c0.png"
+                                                    style="width: 100px"
+                                                    onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div style="padding: 10px;border: 1px solid;cursor: pointer"
+                                                onclick="location.href='http://efood-admin.6amtech.com/admin/product/status/11/0'">
+                                                <span class="legend-indicator bg-success"></span>Active
+                                            </div>
+                                        </td>
+                                        <td>15.00$</td>
+                                        <td>
+
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <i class="tio-settings"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item"
+                                                        href="http://efood-admin.6amtech.com/admin/product/edit/11">Edit</a>
+                                                    <a class="dropdown-item" href="javascript:"
+                                                        onclick="form_alert('product-11','Want to delete this item  ')">Delete</a>
+                                                    <form
+                                                        action="http://efood-admin.6amtech.com/admin/product/delete/11"
+                                                        method="post" id="product-11">
+                                                        <input type="hidden" name="_token"
+                                                            value="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8"> <input
+                                                            type="hidden" name="_method" value="delete">
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>
+                                            <span class="d-block font-size-sm text-body">
+                                                <a href="http://efood-admin.6amtech.com/admin/product/view/10">
+                                                    Set Menu 2
+                                                </a>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div
+                                                style="height: 100px; width: 100px; overflow-x: hidden;overflow-y: hidden">
+                                                <img src="http://efood-admin.6amtech.com/storage/app/public/product/2022-06-12-62a589d4d1130.png"
+                                                    style="width: 100px"
+                                                    onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div style="padding: 10px;border: 1px solid;cursor: pointer"
+                                                onclick="location.href='http://efood-admin.6amtech.com/admin/product/status/10/0'">
+                                                <span class="legend-indicator bg-success"></span>Active
+                                            </div>
+                                        </td>
+                                        <td>140.00$</td>
+                                        <td>
+
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <i class="tio-settings"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item"
+                                                        href="http://efood-admin.6amtech.com/admin/product/edit/10">Edit</a>
+                                                    <a class="dropdown-item" href="javascript:"
+                                                        onclick="form_alert('product-10','Want to delete this item  ')">Delete</a>
+                                                    <form
+                                                        action="http://efood-admin.6amtech.com/admin/product/delete/10"
+                                                        method="post" id="product-10">
+                                                        <input type="hidden" name="_token"
+                                                            value="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8"> <input
+                                                            type="hidden" name="_method" value="delete">
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>
+                                            <span class="d-block font-size-sm text-body">
+                                                <a href="http://efood-admin.6amtech.com/admin/product/view/9">
+                                                    Beef Biriyani With Spice Masal...
+                                                </a>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div
+                                                style="height: 100px; width: 100px; overflow-x: hidden;overflow-y: hidden">
+                                                <img src="http://efood-admin.6amtech.com/storage/app/public/product/2021-02-01-6017135d296bd.png"
+                                                    style="width: 100px"
+                                                    onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div style="padding: 10px;border: 1px solid;cursor: pointer"
+                                                onclick="location.href='http://efood-admin.6amtech.com/admin/product/status/9/0'">
+                                                <span class="legend-indicator bg-success"></span>Active
+                                            </div>
+                                        </td>
+                                        <td>80.00$</td>
+                                        <td>
+
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <i class="tio-settings"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item"
+                                                        href="http://efood-admin.6amtech.com/admin/product/edit/9">Edit</a>
+                                                    <a class="dropdown-item" href="javascript:"
+                                                        onclick="form_alert('product-9','Want to delete this item  ')">Delete</a>
+                                                    <form action="http://efood-admin.6amtech.com/admin/product/delete/9"
+                                                        method="post" id="product-9">
+                                                        <input type="hidden" name="_token"
+                                                            value="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8"> <input
+                                                            type="hidden" name="_method" value="delete">
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>
+                                            <span class="d-block font-size-sm text-body">
+                                                <a href="http://efood-admin.6amtech.com/admin/product/view/8">
+                                                    Chicken Biriyani
+                                                </a>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div
+                                                style="height: 100px; width: 100px; overflow-x: hidden;overflow-y: hidden">
+                                                <img src="http://efood-admin.6amtech.com/storage/app/public/product/2021-02-01-601712b76958e.png"
+                                                    style="width: 100px"
+                                                    onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div style="padding: 10px;border: 1px solid;cursor: pointer"
+                                                onclick="location.href='http://efood-admin.6amtech.com/admin/product/status/8/0'">
+                                                <span class="legend-indicator bg-success"></span>Active
+                                            </div>
+                                        </td>
+                                        <td>120.00$</td>
+                                        <td>
+
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <i class="tio-settings"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item"
+                                                        href="http://efood-admin.6amtech.com/admin/product/edit/8">Edit</a>
+                                                    <a class="dropdown-item" href="javascript:"
+                                                        onclick="form_alert('product-8','Want to delete this item  ')">Delete</a>
+                                                    <form action="http://efood-admin.6amtech.com/admin/product/delete/8"
+                                                        method="post" id="product-8">
+                                                        <input type="hidden" name="_token"
+                                                            value="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8"> <input
+                                                            type="hidden" name="_method" value="delete">
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>
+                                            <span class="d-block font-size-sm text-body">
+                                                <a href="http://efood-admin.6amtech.com/admin/product/view/7">
+                                                    Set Menu 1
+                                                </a>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div
+                                                style="height: 100px; width: 100px; overflow-x: hidden;overflow-y: hidden">
+                                                <img src="http://efood-admin.6amtech.com/storage/app/public/product/2021-02-01-601711684f2c5.png"
+                                                    style="width: 100px"
+                                                    onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div style="padding: 10px;border: 1px solid;cursor: pointer"
+                                                onclick="location.href='http://efood-admin.6amtech.com/admin/product/status/7/0'">
+                                                <span class="legend-indicator bg-success"></span>Active
+                                            </div>
+                                        </td>
+                                        <td>125.00$</td>
+                                        <td>
+
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <i class="tio-settings"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item"
+                                                        href="http://efood-admin.6amtech.com/admin/product/edit/7">Edit</a>
+                                                    <a class="dropdown-item" href="javascript:"
+                                                        onclick="form_alert('product-7','Want to delete this item  ')">Delete</a>
+                                                    <form action="http://efood-admin.6amtech.com/admin/product/delete/7"
+                                                        method="post" id="product-7">
+                                                        <input type="hidden" name="_token"
+                                                            value="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8"> <input
+                                                            type="hidden" name="_method" value="delete">
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>13</td>
+                                        <td>
+                                            <span class="d-block font-size-sm text-body">
+                                                <a href="http://efood-admin.6amtech.com/admin/product/view/6">
+                                                    Mozzarella Cheese Pizza
+                                                </a>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div
+                                                style="height: 100px; width: 100px; overflow-x: hidden;overflow-y: hidden">
+                                                <img src="http://efood-admin.6amtech.com/storage/app/public/product/2021-02-01-6017104848534.png"
+                                                    style="width: 100px"
+                                                    onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div style="padding: 10px;border: 1px solid;cursor: pointer"
+                                                onclick="location.href='http://efood-admin.6amtech.com/admin/product/status/6/0'">
+                                                <span class="legend-indicator bg-success"></span>Active
+                                            </div>
+                                        </td>
+                                        <td>40.00$</td>
+                                        <td>
+
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <i class="tio-settings"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item"
+                                                        href="http://efood-admin.6amtech.com/admin/product/edit/6">Edit</a>
+                                                    <a class="dropdown-item" href="javascript:"
+                                                        onclick="form_alert('product-6','Want to delete this item  ')">Delete</a>
+                                                    <form action="http://efood-admin.6amtech.com/admin/product/delete/6"
+                                                        method="post" id="product-6">
+                                                        <input type="hidden" name="_token"
+                                                            value="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8"> <input
+                                                            type="hidden" name="_method" value="delete">
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>14</td>
+                                        <td>
+                                            <span class="d-block font-size-sm text-body">
+                                                <a href="http://efood-admin.6amtech.com/admin/product/view/5">
+                                                    Italian Spicy Pizza
+                                                </a>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div
+                                                style="height: 100px; width: 100px; overflow-x: hidden;overflow-y: hidden">
+                                                <img src="http://efood-admin.6amtech.com/storage/app/public/product/2021-02-13-6027c27beddb2.png"
+                                                    style="width: 100px"
+                                                    onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div style="padding: 10px;border: 1px solid;cursor: pointer"
+                                                onclick="location.href='http://efood-admin.6amtech.com/admin/product/status/5/0'">
+                                                <span class="legend-indicator bg-success"></span>Active
+                                            </div>
+                                        </td>
+                                        <td>65.00$</td>
+                                        <td>
+
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <i class="tio-settings"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item"
+                                                        href="http://efood-admin.6amtech.com/admin/product/edit/5">Edit</a>
+                                                    <a class="dropdown-item" href="javascript:"
+                                                        onclick="form_alert('product-5','Want to delete this item  ')">Delete</a>
+                                                    <form action="http://efood-admin.6amtech.com/admin/product/delete/5"
+                                                        method="post" id="product-5">
+                                                        <input type="hidden" name="_token"
+                                                            value="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8"> <input
+                                                            type="hidden" name="_method" value="delete">
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td>
+                                            <span class="d-block font-size-sm text-body">
+                                                <a href="http://efood-admin.6amtech.com/admin/product/view/4">
+                                                    Grilled Cheese Burger
+                                                </a>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div
+                                                style="height: 100px; width: 100px; overflow-x: hidden;overflow-y: hidden">
+                                                <img src="http://efood-admin.6amtech.com/storage/app/public/product/2021-02-01-60170d5a6b6c3.png"
+                                                    style="width: 100px"
+                                                    onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div style="padding: 10px;border: 1px solid;cursor: pointer"
+                                                onclick="location.href='http://efood-admin.6amtech.com/admin/product/status/4/0'">
+                                                <span class="legend-indicator bg-success"></span>Active
+                                            </div>
+                                        </td>
+                                        <td>50.00$</td>
+                                        <td>
+
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <i class="tio-settings"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item"
+                                                        href="http://efood-admin.6amtech.com/admin/product/edit/4">Edit</a>
+                                                    <a class="dropdown-item" href="javascript:"
+                                                        onclick="form_alert('product-4','Want to delete this item  ')">Delete</a>
+                                                    <form action="http://efood-admin.6amtech.com/admin/product/delete/4"
+                                                        method="post" id="product-4">
+                                                        <input type="hidden" name="_token"
+                                                            value="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8"> <input
+                                                            type="hidden" name="_method" value="delete">
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>16</td>
+                                        <td>
+                                            <span class="d-block font-size-sm text-body">
+                                                <a href="http://efood-admin.6amtech.com/admin/product/view/3">
+                                                    Beef Spicy Burger
+                                                </a>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div
+                                                style="height: 100px; width: 100px; overflow-x: hidden;overflow-y: hidden">
+                                                <img src="http://efood-admin.6amtech.com/storage/app/public/product/2021-02-01-60170c761f017.png"
+                                                    style="width: 100px"
+                                                    onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div style="padding: 10px;border: 1px solid;cursor: pointer"
+                                                onclick="location.href='http://efood-admin.6amtech.com/admin/product/status/3/0'">
+                                                <span class="legend-indicator bg-success"></span>Active
+                                            </div>
+                                        </td>
+                                        <td>30.00$</td>
+                                        <td>
+
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <i class="tio-settings"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item"
+                                                        href="http://efood-admin.6amtech.com/admin/product/edit/3">Edit</a>
+                                                    <a class="dropdown-item" href="javascript:"
+                                                        onclick="form_alert('product-3','Want to delete this item  ')">Delete</a>
+                                                    <form action="http://efood-admin.6amtech.com/admin/product/delete/3"
+                                                        method="post" id="product-3">
+                                                        <input type="hidden" name="_token"
+                                                            value="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8"> <input
+                                                            type="hidden" name="_method" value="delete">
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>17</td>
+                                        <td>
+                                            <span class="d-block font-size-sm text-body">
+                                                <a href="http://efood-admin.6amtech.com/admin/product/view/2">
+                                                    Super Charger Burger
+                                                </a>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div
+                                                style="height: 100px; width: 100px; overflow-x: hidden;overflow-y: hidden">
+                                                <img src="http://efood-admin.6amtech.com/storage/app/public/product/2021-02-01-60170b3a20094.png"
+                                                    style="width: 100px"
+                                                    onerror="this.src='http://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div style="padding: 10px;border: 1px solid;cursor: pointer"
+                                                onclick="location.href='http://efood-admin.6amtech.com/admin/product/status/2/0'">
+                                                <span class="legend-indicator bg-success"></span>Active
+                                            </div>
+                                        </td>
+                                        <td>45.00$</td>
+                                        <td>
+
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <i class="tio-settings"></i>
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item"
+                                                        href="http://efood-admin.6amtech.com/admin/product/edit/2">Edit</a>
+                                                    <a class="dropdown-item" href="javascript:"
+                                                        onclick="form_alert('product-2','Want to delete this item  ')">Delete</a>
+                                                    <form action="http://efood-admin.6amtech.com/admin/product/delete/2"
+                                                        method="post" id="product-2">
+                                                        <input type="hidden" name="_token"
+                                                            value="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8"> <input
+                                                            type="hidden" name="_method" value="delete">
+                                                    </form>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <hr>
+                            <div class="page-area">
+                                <table>
+                                    <tfoot class="border-top">
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer">
+            <div class="row justify-content-between align-items-center">
+                <div class="col">
+                    <p class="font-size-sm mb-0">
+                        <span class="d-none d-sm-inline-block">e-Food @ 2021</span>
+                    </p>
+                </div>
+                <div class="col-auto">
+                    <div class="d-flex justify-content-end">
+
+                        <ul class="list-inline list-separator">
+                            <li class="list-inline-item">
+                                <a class="list-separator-link"
+                                    href="http://efood-admin.6amtech.com/admin/business-settings/restaurant/restaurant-setup">Restaurant
+                                    Settings</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="list-separator-link"
+                                    href="http://efood-admin.6amtech.com/admin/settings">Profile</a>
+                            </li>
+                            <li class="list-inline-item">
+
+                                <div class="hs-unfold">
+                                    <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle"
+                                        href="http://efood-admin.6amtech.com/admin">
+                                        <i class="tio-home-outlined"></i>
+                                    </a>
+                                </div>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="popup-modal">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <center>
+                                    <h2 style="color: rgba(96,96,96,0.68)">
+                                        <i class="tio-shopping-cart-outlined"></i> You have new order Check Please.
+                                    </h2>
+                                    <hr>
+                                    <button onclick="check_order()" class="btn btn-primary">Ok let me check</button>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="http://efood-admin.6amtech.com/public/assets/admin/js/custom.js"></script>
+
+
+    <script src="http://efood-admin.6amtech.com/public/assets/admin/js/vendor.min.js"></script>
+    <script src="http://efood-admin.6amtech.com/public/assets/admin/js/theme.min.js"></script>
+    <script src="http://efood-admin.6amtech.com/public/assets/admin/js/sweet_alert.js"></script>
+    <script src="http://efood-admin.6amtech.com/public/assets/admin/js/toastr.js"></script>
+    <script type="text/javascript"></script>
+
+    <script>
+        $(document).on('ready', function () {
+            // ONLY DEV
+            // =======================================================
+            if (window.localStorage.getItem('hs-builder-popover') === null) {
+                $('#builderPopover').popover('show')
+                    .on('shown.bs.popover', function () {
+                        $('.popover').last().addClass('popover-dark')
+                    });
+
+                $(document).on('click', '#closeBuilderPopover', function () {
+                    window.localStorage.setItem('hs-builder-popover', true);
+                    $('#builderPopover').popover('dispose');
+                });
+            } else {
+                $('#builderPopover').on('show.bs.popover', function () {
+                    return false
+                });
+            }
+            // END ONLY DEV
+            // =======================================================
+
+            // BUILDER TOGGLE INVOKER
+            // =======================================================
+            $('.js-navbar-vertical-aside-toggle-invoker').click(function () {
+                $('.js-navbar-vertical-aside-toggle-invoker i').tooltip('hide');
+            });
+
+            // INITIALIZATION OF MEGA MENU
+            // =======================================================
+            var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
+                desktop: {
+                    position: 'left'
+                }
+            }).init();
+
+
+            // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+            // =======================================================
+            var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
+
+
+            // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+            // =======================================================
+            $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
+
+            $(".js-nav-tooltip-link").on("show.bs.tooltip", function (e) {
+                if (!$("body").hasClass("navbar-vertical-aside-mini-mode")) {
+                    return false;
+                }
+            });
+
+
+            // INITIALIZATION OF UNFOLD
+            // =======================================================
+            $('.js-hs-unfold-invoker').each(function () {
+                var unfold = new HSUnfold($(this)).init();
+            });
+
+
+            // INITIALIZATION OF FORM SEARCH
+            // =======================================================
+            $('.js-form-search').each(function () {
+                new HSFormSearch($(this)).init()
+            });
+
+
+            // INITIALIZATION OF SELECT2
+            // =======================================================
+            $('.js-select2-custom').each(function () {
+                var select2 = $.HSCore.components.HSSelect2.init($(this));
+            });
+
+
+            // INITIALIZATION OF DATERANGEPICKER
+            // =======================================================
+            $('.js-daterangepicker').daterangepicker();
+
+            $('.js-daterangepicker-times').daterangepicker({
+                timePicker: true,
+                startDate: moment().startOf('hour'),
+                endDate: moment().startOf('hour').add(32, 'hour'),
+                locale: {
+                    format: 'M/DD hh:mm A'
+                }
+            });
+
+            var start = moment();
+            var end = moment();
+
+            function cb(start, end) {
+                $('#js-daterangepicker-predefined .js-daterangepicker-predefined-preview').html(start.format('MMM D') + ' - ' + end.format('MMM D, YYYY'));
+            }
+
+            $('#js-daterangepicker-predefined').daterangepicker({
+                startDate: start,
+                endDate: end,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }
+            }, cb);
+
+            cb(start, end);
+
+
+            // INITIALIZATION OF CLIPBOARD
+            // =======================================================
+            $('.js-clipboard').each(function () {
+                var clipboard = $.HSCore.components.HSClipboard.init(this);
+            });
+        });
+    </script>
+    <script>
+        $('#search-form').on('submit', function () {
+            var formData = new FormData(this);
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.post({
+                url: 'http://efood-admin.6amtech.com/admin/product/search',
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                beforeSend: function () {
+                    $('#loading').show();
+                },
+                success: function (data) {
+                    $('#set-rows').html(data.view);
+                    $('.page-area').hide();
+                },
+                complete: function () {
+                    $('#loading').hide();
+                },
+            });
+        });
+    </script>
+    <audio id="myAudio">
+        <source src="http://efood-admin.6amtech.com/public/assets/admin/sound/notification.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        var audio = document.getElementById("myAudio");
+
+        function playAudio() {
+            audio.play();
+        }
+
+        function pauseAudio() {
+            audio.pause();
+        }
+    </script>
+    <script>
+        setInterval(function () {
+            $.get({
+                url: 'http://efood-admin.6amtech.com/admin/get-restaurant-data',
+                dataType: 'json',
+                success: function (response) {
+                    let data = response.data;
+                    if (data.new_order > 0) {
+                        playAudio();
+                        $('#popup-modal').appendTo("body").modal('show');
+                    }
+                },
+            });
+        }, 10000);
+
+        function check_order() {
+            location.href = 'http://efood-admin.6amtech.com/admin/orders/list/pending';
+        }
+
+        function route_alert(route, message) {
+            Swal.fire({
+                title: 'Are you sure ',
+                text: message,
+                type: 'warning',
+                showCancelButton: true,
+                cancelButtonColor: 'default',
+                confirmButtonColor: '#FC6A57',
+                cancelButtonText: 'No',
+                confirmButtonText: 'Yes',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    location.href = route;
+                }
+            })
+        }
+
+        function form_alert(id, message) {
+            Swal.fire({
+                title: 'Are you sure ',
+                text: message,
+                type: 'warning',
+                showCancelButton: true,
+                cancelButtonColor: 'default',
+                confirmButtonColor: '#FC6A57',
+                cancelButtonText: 'No',
+                confirmButtonText: 'Yes',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    $('#' + id).submit()
+                }
+            })
+        }
+    </script>
+    <script>
+        function call_demo() {
+            toastr.info('This option is disabled for demo!', {
+                CloseButton: true,
+                ProgressBar: true
+            });
+        }
+    </script>
+    <script>
+        //Internet Status Check
+        window.addEventListener('online', function () {
+            toastr.success('Became online');
+        });
+        window.addEventListener('offline', function () {
+            toastr.error('Became offline');
+        });
+
+        //Internet Status Check (after any event)
+        document.body.addEventListener("click", function (event) {
+            if (window.navigator.onLine === false) {
+                toastr.error('You are in offline');
+                event.preventDefault();
+            }
+        }, false);
+    </script>
+
+    <script>
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="http://efood-admin.6amtech.com/public/assets/admin/vendor/babel-polyfill/polyfill.min.js"><\/script>');
+    </script>
+</body>
+
+</html>

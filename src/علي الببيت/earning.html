@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8">
+
+    <title>Earning Report</title>
+
+    <link rel="shortcut icon" href="">
+    <script src="https://kit.fontawesome.com/0d1ebe0b10.js" crossorigin="anonymous"></script>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://efood-admin.6amtech.com/public/assets/admin/css/vendor.min.css">
+    <link rel="stylesheet" href="https://efood-admin.6amtech.com/public/assets/admin/vendor/icon-set/style.css">
+
+    <link rel="stylesheet" href="https://efood-admin.6amtech.com/public/assets/admin/css/theme.minc619.css?v=1.0">
+    <style>
+        .scroll-bar {
+            max-height: calc(100vh - 100px);
+            overflow-y: auto !important;
+        }
+
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 1px #cfcfcf;
+            /*border-radius: 5px;*/
+        }
+
+        ::-webkit-scrollbar {
+            width: 3px;
+            height: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            /*border-radius: 5px;*/
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FC6A57;
+        }
+
+        .flex-start {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .flex-end {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .flex-inline {
+            display: inline-flex;
+        }
+
+        .flex-between {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+    <script
+        src="https://efood-admin.6amtech.com/public/assets/admin/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside-mini-cache.js"></script>
+    <link rel="stylesheet" href="https://efood-admin.6amtech.com/public/assets/admin/css/toastr.css">
+</head>
+
+<body class="footer-offset">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="loading" style="display: none;">
+                    <div style="position: fixed;z-index: 9999; left: 40%;top: 37% ;width: 100%">
+                        <img width="200" src="https://efood-admin.6amtech.com/public/assets/admin/img/loader.gif">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="styleSwitcherDropdown" class="hs-unfold-content sidebar sidebar-bordered sidebar-box-shadow"
+        style="width: 35rem;">
+        <div class="card card-lg border-0 h-100">
+            <div class="card-header align-items-start">
+                <div class="mr-2">
+                    <h3 class="card-header-title">Front Builder</h3>
+                    <p>Customize your overview page layout. Choose the one that best fits your needs.</p>
+                </div>
+
+                <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-dark" href="javascript:;"
+                    data-hs-unfold-options='{
+                  "target": "#styleSwitcherDropdown",
+                  "type": "css-animation",
+                  "animationIn": "fadeInRight",
+                  "animationOut": "fadeOutRight",
+                  "hasOverlay": true,
+                  "smartPositionOff": true
+                 }'>
+                    <i class="tio-clear tio-lg"></i>
+                </a>
+
+            </div>
+
+            <div class="card-body sidebar-scrollbar">
+                <h4 class="mb-1">Layout skins <span id="js-builder-disabled" class="badge badge-soft-danger"
+                        style="opacity: 0">Disabled</span></h4>
+                <p>3 kinds of layout skins to choose from.</p>
+                <div class="row gx-2 mb-5">
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="layoutSkinsRadio"
+                                    id="layoutSkinsRadio1" checked value="default">
+                                <label class="custom-checkbox-card-label" for="layoutSkinsRadio1">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Default</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="layoutSkinsRadio"
+                                    id="layoutSkinsRadio2" value="navbar-dark">
+                                <label class="custom-checkbox-card-label" for="layoutSkinsRadio2">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Dark</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="layoutSkinsRadio"
+                                    id="layoutSkinsRadio3" value="navbar-light">
+                                <label class="custom-checkbox-card-label" for="layoutSkinsRadio3">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Light</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h4 class="mb-1">Sidebar layout options</h4>
+                <p>Choose between standard navigation sizing, mini or even compact with icons.</p>
+                <div class="row gx-2 mb-5">
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="sidebarLayoutOptions"
+                                    id="sidebarLayoutOptions1" checked value="default">
+                                <label class="custom-checkbox-card-label" for="sidebarLayoutOptions1">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Default</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="sidebarLayoutOptions"
+                                    id="sidebarLayoutOptions2" value="navbar-vertical-aside-compact-mode">
+                                <label class="custom-checkbox-card-label" for="sidebarLayoutOptions2">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Compact</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="sidebarLayoutOptions"
+                                    id="sidebarLayoutOptions3" value="navbar-vertical-aside-mini-mode">
+                                <label class="custom-checkbox-card-label" for="sidebarLayoutOptions3">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Mini</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h4 class="mb-1">Header layout options</h4>
+                <p>Choose the primary navigation of your header layout.</p>
+                <div class="row gx-2">
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="headerLayoutOptions"
+                                    id="headerLayoutOptions1" value="single">
+                                <label class="custom-checkbox-card-label" for="headerLayoutOptions1">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Default (Fluid)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="headerLayoutOptions"
+                                    id="headerLayoutOptions2" value="single-container">
+                                <label class="custom-checkbox-card-label" for="headerLayoutOptions2">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Default (Container)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="headerLayoutOptions"
+                                    id="headerLayoutOptions3" value="double">
+                                <label class="custom-checkbox-card-label" for="headerLayoutOptions3">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Double line (Fluid)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center mt-2">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="headerLayoutOptions"
+                                    id="headerLayoutOptions4" value="double-container">
+                                <label class="custom-checkbox-card-label" for="headerLayoutOptions4">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Double line (Container)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-footer">
+                <div class="row gx-2">
+                    <div class="col">
+                        <button type="button" id="js-builder-reset" class="btn btn-block btn-lg btn-white">
+                            <i class="tio-restore"></i> Reset
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" id="js-builder-preview" class="btn btn-block btn-lg btn-primary">
+                            <i class="tio-visible"></i> Preview
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="headerMain" class="d-none">
+        <header id="header"
+            class="navbar navbar-expand-lg navbar-fixed navbar-height navbar-flush navbar-container navbar-bordered">
+            <div class="navbar-nav-wrap">
+                <div class="navbar-brand-wrapper">
+
+                    <a class="navbar-brand" href="https://efood-admin.6amtech.com/admin" aria-label="">
+                        <img class="navbar-brand-logo"
+                            onerror="this.src='https://efood-admin.6amtech.com/public/assets/admin/img/160x160/img1.jpg'"
+                            src="https://efood-admin.6amtech.com/storage/app/public/restaurant/2021-02-27-603aa32c36d89.png"
+                            alt="Logo">
+                        <img class="navbar-brand-logo-mini"
+                            onerror="this.src='https://efood-admin.6amtech.com/public/assets/admin/img/160x160/img1.jpg'"
+                            src="https://efood-admin.6amtech.com/storage/app/public/restaurant/2021-02-27-603aa32c36d89.png"
+                            alt="Logo">
+                    </a>
+
+                </div>
+                <div class="navbar-nav-wrap-content-left">
+
+                    <button type="button" class="js-navbar-vertical-aside-toggle-invoker close mr-3">
+                        <i class="tio-first-page navbar-vertical-aside-toggle-short-align" data-toggle="tooltip"
+                            data-placement="right" title="Collapse"></i>
+                        <i class="tio-last-page navbar-vertical-aside-toggle-full-align"
+                            data-template='<div class="tooltip d-none d-sm-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
+                            data-toggle="tooltip" data-placement="right" title="Expand"></i>
+                    </button>
+
+                </div>
+
+                <div class="navbar-nav-wrap-content-right">
+
+                    <ul class="navbar-nav align-items-center flex-row">
+                        <li class="nav-item d-none d-sm-inline-block">
+                            <div class="hs-unfold">
+                                <div style="background:white;padding: 9px;border-radius: 5px;">
+                                    <div class="topbar-text dropdown disable-autohide mr-3 text-capitalize">
+                                        <a class="topbar-link dropdown-toggle" href="#" data-toggle="dropdown"
+                                            style="color: black!important;">
+                                            en
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item pb-1"
+                                                    href="https://efood-admin.6amtech.com/admin/lang/en">
+                                                    <span style="text-transform: capitalize">English</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item pb-1"
+                                                    href="https://efood-admin.6amtech.com/admin/lang/ar">
+                                                    <span style="text-transform: capitalize">Arabic - العربية</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+
+                            <div class="hs-unfold">
+                                <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle"
+                                    href="https://efood-admin.6amtech.com/admin/message/list">
+                                    <i class="tio-messages-outlined"></i>
+                                </a>
+                            </div>
+
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+
+                            <div class="hs-unfold">
+                                <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle"
+                                    href="https://efood-admin.6amtech.com/admin/orders/list/pending">
+                                    <i class="tio-shopping-cart-outlined"></i>
+                                </a>
+                            </div>
+
+                        </li>
+                        <li class="nav-item">
+
+                            <div class="hs-unfold">
+                                <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper" href="javascript:;"
+                                    data-hs-unfold-options='{
+                                     "target": "#accountNavbarDropdown",
+                                     "type": "css-animation"
+                                   }'>
+                                    <div class="avatar avatar-sm avatar-circle">
+                                        <img class="avatar-img"
+                                            onerror="this.src='https://efood-admin.6amtech.com/public/assets/admin/img/160x160/img1.jpg'"
+                                            src="https://efood-admin.6amtech.com/storage/app/public/admin/"
+                                            alt="Image Description">
+                                        <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                                    </div>
+                                </a>
+                                <div id="accountNavbarDropdown"
+                                    class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account"
+                                    style="width: 16rem;">
+                                    <div class="dropdown-item-text">
+                                        <div class="media align-items-center">
+                                            <div class="avatar avatar-sm avatar-circle mr-2">
+                                                <img class="avatar-img"
+                                                    onerror="this.src='https://efood-admin.6amtech.com/public/assets/admin/img/160x160/img1.jpg'"
+                                                    src="https://efood-admin.6amtech.com/storage/app/public/admin/"
+                                                    alt="Image Description">
+                                            </div>
+                                            <div class="media-body">
+                                                <span class="card-title h5">admin</span>
+                                                <span class="card-text"><a href="/cdn-cgi/l/email-protection"
+                                                        class="__cf_email__"
+                                                        data-cfemail="6d0c090004032d0c09000403430e0200">[email&#160;protected]</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="https://efood-admin.6amtech.com/admin/settings">
+                                        <span class="text-truncate pr-2" title="Settings">Settings</span>
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:" onclick="Swal.fire({
+                                    title: 'Do you want to logout ',
+                                    showDenyButton: true,
+                                    showCancelButton: true,
+                                    confirmButtonColor: '#FC6A57',
+                                    cancelButtonColor: '#363636',
+                                    confirmButtonText: 'Yes',
+                                    cancelButtonText: `No`,
+                                    }).then((result) => {
+                                    if (result.value) {
+                                    location.href='https://efood-admin.6amtech.com/admin/auth/logout';
+                                    } else{
+                                        Swal.fire({
+                                        title: 'Canceled',
+                                        confirmButtonText: 'Okay',
+                                        })
+                                    }
+                                    })">
+                                        <span class="text-truncate pr-2" title="Sign out">Sign out</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </header>
+    </div>
+    <div id="headerFluid" class="d-none"></div>
+    <div id="headerDouble" class="d-none"></div>
+    <div id="sidebarMain" class="d-none">
+        <aside
+            class="js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered  ">
+            <div class="navbar-vertical-container text-capitalize">
+                <div class="navbar-vertical-footer-offset">
+                    <div class="navbar-brand-wrapper justify-content-between">
+
+                        <a class="navbar-brand" href="https://efood-admin.6amtech.com/admin" aria-label="Front">
+                            <img class="navbar-brand-logo"
+                                onerror="this.src='https://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'"
+                                src="https://efood-admin.6amtech.com/storage/app/public/restaurant/2021-02-27-603aa32c36d89.png"
+                                alt="Logo">
+                            <img class="navbar-brand-logo-mini"
+                                onerror="this.src='https://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'"
+                                src="https://efood-admin.6amtech.com/storage/app/public/restaurant/2021-02-27-603aa32c36d89.png"
+                                alt="Logo">
+                        </a>
+
+
+                        <button type="button"
+                            class="js-navbar-vertical-aside-toggle-invoker navbar-vertical-aside-toggle btn btn-icon btn-xs btn-ghost-dark">
+                            <i class="tio-clear tio-lg"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="navbar-vertical-content">
+                        <ul class="navbar-nav navbar-nav-lg nav-tabs">
+
+                            <li class="navbar-vertical-aside-has-menu show">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link" href="./index.html"
+                                    title="Dashboards">
+                                    <i class="tio-home-vs-1-outlined nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        Dashboard
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <small class="nav-subtitle">Pos System</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:">
+                                    <i class="tio-shopping nav-icon"></i>
+                                    <span
+                                        class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">POS</span>
+                                </a>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub" style="display: none">
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./pos.html" title="Pos">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Pos</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./order list.html" title="Orders">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Orders
+                                                <span class="badge badge-info badge-pill ml-1">
+                                                    7
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <small class="nav-subtitle">Order Section</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:">
+                                    <i class="tio-shopping-cart nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        Order
+                                    </span>
+                                </a>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub" style="display: none">
+                                    <li class="nav-item ">
+                                        <a class="nav-link" href="./state_order_all.html" title="">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">
+                                                All
+                                                <span class="badge badge-info badge-pill ml-1">
+                                                    46
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./pendingorder.html" title="">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">
+                                                Pending
+                                                <span class="badge badge-soft-info badge-pill ml-1">
+                                                    23
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./confirm_order.html" title="">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">
+                                                Confirmed
+                                                <span class="badge badge-soft-success badge-pill ml-1">
+                                                    5
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./dlivered.html" title="">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">
+                                                Delivered
+                                                <span class="badge badge-success badge-pill ml-1">
+                                                    13
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./return_order.html" title="">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">
+                                                Returned
+                                                <span class="badge badge-soft-danger badge-pill ml-1">
+                                                    0
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./cancel.html" title="">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">
+                                                Canceled
+                                                <span class="badge badge-soft-dark badge-pill ml-1">
+                                                    2
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <small class="nav-subtitle">Product Section</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+
+
+
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:">
+                                    <i class="tio-premium-outlined nav-icon"></i>
+                                    <span
+                                        class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Product</span>
+                                </a>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub" style="display: none">
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./addprodact.html" title="Add new product">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Add New</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./productlist.html" title="Product list">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">List</span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+
+                          
+                            <li class="nav-item">
+                                <small class="nav-subtitle" title="Layouts">Business Section</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+
+                         
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                    href="./add_cupon.html">
+                                    <i class="tio-gift nav-icon"></i>
+                                    <span
+                                        class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Coupon</span>
+                                </a>
+                            </li>
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:">
+                                    <i class="tio-settings nav-icon"></i>
+                                    <span
+                                        class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Restaurant
+                                        Settings</span>
+                                </a>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub" style="display: none">
+
+                                    <li class="nav-item ">
+                                        <a class="nav-link "
+                                            href="./admin_setting.html">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Restaurant Setup</span>
+                                        </a>
+                                    </li>
+
+                                    
+                                </ul>
+                            </li>
+
+                            
+                            <li class="nav-item">
+                                <small class="nav-subtitle" title="Layouts">Deliveryman Section</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                    href="./add_driver.html">
+                                    <i class="tio-running nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        Register
+                                    </span>
+                                </a>
+                            </li>
+
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                    href="./deliverylist.html">
+                                    <i class="tio-filter-list nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        List
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                    href="./review.html">
+                                    <i class="tio-star-outlined nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        Reviews
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <small class="nav-subtitle" title="Documentation">Customer Section</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                    href="./custmer.html">
+                                    <i class="tio-poi-user nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        Customer List
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                    href="./point.html">
+                                    <i class="tio-format-points nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        Point History
+                                    </span>
+                                </a>
+                            </li>
+                            
+
+                            <li class="nav-item">
+                                <div class="nav-divider"></div>
+                            </li>
+                            <li class="nav-item">
+                                <small class="nav-subtitle" title="Report and analytics">Report and analytics</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:">
+                                    <i class="tio-report-outlined nav-icon"></i>
+                                    <span
+                                        class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Reports</span>
+                                </a>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub" style="display: none">
+                                    <li class="nav-item ">
+                                        <a class="nav-link "
+                                            href="./earning.html">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Earning Report</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./orderreport.html">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Order Report</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link "
+                                            href="./deliveryman-report.html">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">DeliveryMan Report</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link "
+                                            href="./proudctsale.html">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Product Report</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link "
+                                            href="./sale.html">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Sale Report</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item" style="padding-top: 100px">
+                                <div class=""></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </aside>
+    </div>
+    <div id="sidebarCompact" class="d-none">
+    </div>
+
+    <main id="content" role="main" class="main pointer-event">
+
+        <div class="content container-fluid">
+
+            <div class="page-header">
+                <div class="media mb-3">
+
+                    <div class="avatar avatar-xl avatar-4by3 mr-2">
+                        <img class="avatar-img"
+                            src="https://efood-admin.6amtech.com/public/assets/admin/svg/illustrations/earnings.png"
+                            alt="Image Description">
+                    </div>
+
+                    <div class="media-body">
+                        <div class="row">
+                            <div class="col-lg mb-3 mb-lg-0 text-capitalize">
+                                <h1 class="page-header-title">Earning Report Overview</h1>
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <span>Admin:</span>
+                                        <a href="#">admin </a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="row align-items-center g-0">
+                                            <div class="col-auto pr-2">Date</div>
+
+                                            <div>
+                                                ( 2022-10-01 00:00:00 - 2022-10-30 00:00:00 )
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-auto">
+                                <div class="d-flex">
+                                    <a class="btn btn-icon btn-primary rounded-circle"
+                                        href="https://efood-admin.6amtech.com/admin">
+                                        <i class="tio-home-outlined"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="js-nav-scroller hs-nav-scroller-horizontal">
+                    <span class="hs-nav-scroller-arrow-prev" style="display: none;">
+                        <a class="hs-nav-scroller-arrow-link" href="javascript:;">
+                            <i class="tio-chevron-left"></i>
+                        </a>
+                    </span>
+                    <span class="hs-nav-scroller-arrow-next" style="display: none;">
+                        <a class="hs-nav-scroller-arrow-link" href="javascript:;">
+                            <i class="tio-chevron-right"></i>
+                        </a>
+                    </span>
+                    <ul class="nav nav-tabs page-header-tabs" id="projectsTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="javascript:">Overview</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="row border-bottom border-right border-left border-top" style="border-radius: 10px">
+                <div class="col-lg-12 pt-3">
+                    <form action="https://efood-admin.6amtech.com/admin/report/set-date" method="post">
+                        <input type="hidden" name="_token" value="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Show data by date range</label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <input type="date" name="from" id="from_date" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <input type="date" name="to" id="to_date" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <button type="submit" class="btn btn-primary btn-block">Show</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-6 col-lg-6 mb-3 mb-lg-6">
+
+                    <div class="card card-sm">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+
+                                    <div class="media">
+                                        <i class="tio-dollar-outlined nav-icon"></i>
+                                        <div class="media-body">
+                                            <h4 class="mb-1">Total Sold</h4>
+                                            <span class="font-size-sm text-success">
+                                                <i class="tio-trending-up"></i> 0.00$
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-auto">
+
+                                    <div class="js-circle" data-hs-circles-options='{
+                                       "value": 0,
+                                       "maxValue": 100,
+                                       "duration": 2000,
+                                       "isViewportInit": true,
+                                       "colors": ["#e7eaf3", "green"],
+                                       "radius": 25,
+                                       "width": 3,
+                                       "fgStrokeLinecap": "round",
+                                       "textFontSize": 14,
+                                       "additionalText": "%",
+                                       "textClass": "circle-custom-text",
+                                       "textColor": "green"
+                                     }'></div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-6 col-lg-6 mb-3 mb-lg-6">
+
+                    <div class="card card-sm">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+
+                                    <div class="media">
+                                        <i class="tio-money nav-icon"></i>
+                                        <div class="media-body">
+                                            <h4 class="mb-1">Total Tax</h4>
+                                            <span class="font-size-sm text-warning">
+                                                <i class="tio-trending-up"></i> 0.00$
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-auto">
+
+                                    <div class="js-circle" data-hs-circles-options='{
+                           "value": 0,
+                           "maxValue": 100,
+                           "duration": 2000,
+                           "isViewportInit": true,
+                           "colors": ["#e7eaf3", "#ec9a3c"],
+                           "radius": 25,
+                           "width": 3,
+                           "fgStrokeLinecap": "round",
+                           "textFontSize": 14,
+                           "additionalText": "%",
+                           "textClass": "circle-custom-text",
+                           "textColor": "#ec9a3c"
+                         }'></div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="card mb-3 mb-lg-5 border-top border-left border-right border-bottom">
+
+                <div class="card-header">
+                    <h6 class="card-subtitle mb-0">Total sale (2022) :<span class="h3 ml-sm-2"> 1,007.66$</span>
+                    </h6>
+
+                    <div class="hs-unfold">
+                        <a class="js-hs-unfold-invoker btn btn-white"
+                            href="https://efood-admin.6amtech.com/admin/orders/list/all">
+                            <i class="tio-shopping-cart-outlined mr-1"></i> Orders
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div class="card-body">
+
+                    <div class="chartjs-custom" style="height: 18rem;">
+                        <canvas class="js-chart" data-hs-chartjs-options='{
+                        "type": "line",
+                        "data": {
+                           "labels": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                           "datasets": [{
+                            "data": [0.00,0.00,0.00,0.00,0.00,648.93,0.00,160.00,0.00,0.00,0.00,0.00],
+                            "backgroundColor": ["rgba(55, 125, 255, 0)", "rgba(255, 255, 255, 0)"],
+                            "borderColor": "green",
+                            "borderWidth": 2,
+                            "pointRadius": 0,
+                            "pointBorderColor": "#fff",
+                            "pointBackgroundColor": "green",
+                            "pointHoverRadius": 0,
+                            "hoverBorderColor": "#fff",
+                            "hoverBackgroundColor": "#377dff"
+                          },
+                          {
+                            "data": [0,0,0,0,0,29.84,0,0.00,0,0,0,0],
+                            "backgroundColor": ["rgba(0, 201, 219, 0)", "rgba(255, 255, 255, 0)"],
+                            "borderColor": "#ec9a3c",
+                            "borderWidth": 2,
+                            "pointRadius": 0,
+                            "pointBorderColor": "#fff",
+                            "pointBackgroundColor": "#ec9a3c",
+                            "pointHoverRadius": 0,
+                            "hoverBorderColor": "#fff",
+                            "hoverBackgroundColor": "#00c9db"
+                          }]
+                        },
+                        "options": {
+                          "gradientPosition": {"y1": 200},
+                           "scales": {
+                              "yAxes": [{
+                                "gridLines": {
+                                  "color": "#e7eaf3",
+                                  "drawBorder": false,
+                                  "zeroLineColor": "#e7eaf3"
+                                },
+                                "ticks": {
+                                  "min": 0,
+                                  "max": 1616,
+                                  "stepSize": 323,
+                                  "fontColor": "#97a4af",
+                                  "fontFamily": "Open Sans, sans-serif",
+                                  "padding": 10,
+                                  "postfix": " $"
+                                }
+                              }],
+                              "xAxes": [{
+                                "gridLines": {
+                                  "display": false,
+                                  "drawBorder": false
+                                },
+                                "ticks": {
+                                  "fontSize": 12,
+                                  "fontColor": "#97a4af",
+                                  "fontFamily": "Open Sans, sans-serif",
+                                  "padding": 5
+                                }
+                              }]
+                          },
+                          "tooltips": {
+                            "prefix": "",
+                            "postfix": "",
+                            "hasIndicator": true,
+                            "mode": "index",
+                            "intersect": false,
+                            "lineMode": true,
+                            "lineWithLineColor": "rgba(19, 33, 68, 0.075)"
+                          },
+                          "hover": {
+                            "mode": "nearest",
+                            "intersect": true
+                          }
+                        }
+                      }'>
+                        </canvas>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer">
+            <div class="row justify-content-between align-items-center">
+                <div class="col">
+                    <p class="font-size-sm mb-0">
+                        <span class="d-none d-sm-inline-block">e-Food @ 2021</span>
+                    </p>
+                </div>
+                <div class="col-auto">
+                    <div class="d-flex justify-content-end">
+
+                        <ul class="list-inline list-separator">
+                            <li class="list-inline-item">
+                                <a class="list-separator-link"
+                                    href="https://efood-admin.6amtech.com/admin/business-settings/restaurant/restaurant-setup">Restaurant
+                                    Settings</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="list-separator-link"
+                                    href="https://efood-admin.6amtech.com/admin/settings">Profile</a>
+                            </li>
+                            <li class="list-inline-item">
+
+                                <div class="hs-unfold">
+                                    <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle"
+                                        href="https://efood-admin.6amtech.com/admin">
+                                        <i class="tio-home-outlined"></i>
+                                    </a>
+                                </div>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="popup-modal">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <center>
+                                    <h2 style="color: rgba(96,96,96,0.68)">
+                                        <i class="tio-shopping-cart-outlined"></i> You have new order Check Please.
+                                    </h2>
+                                    <hr>
+                                    <button onclick="check_order()" class="btn btn-primary">Ok let me check</button>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://efood-admin.6amtech.com/public/assets/admin/js/custom.js"></script>
+
+
+    <script src="https://efood-admin.6amtech.com/public/assets/admin/js/vendor.min.js"></script>
+    <script src="https://efood-admin.6amtech.com/public/assets/admin/js/theme.min.js"></script>
+    <script src="https://efood-admin.6amtech.com/public/assets/admin/js/sweet_alert.js"></script>
+    <script src="https://efood-admin.6amtech.com/public/assets/admin/js/toastr.js"></script>
+    <script type="text/javascript"></script>
+
+    <script>
+        $(document).on('ready', function () {
+            // ONLY DEV
+            // =======================================================
+            if (window.localStorage.getItem('hs-builder-popover') === null) {
+                $('#builderPopover').popover('show')
+                    .on('shown.bs.popover', function () {
+                        $('.popover').last().addClass('popover-dark')
+                    });
+
+                $(document).on('click', '#closeBuilderPopover', function () {
+                    window.localStorage.setItem('hs-builder-popover', true);
+                    $('#builderPopover').popover('dispose');
+                });
+            } else {
+                $('#builderPopover').on('show.bs.popover', function () {
+                    return false
+                });
+            }
+            // END ONLY DEV
+            // =======================================================
+
+            // BUILDER TOGGLE INVOKER
+            // =======================================================
+            $('.js-navbar-vertical-aside-toggle-invoker').click(function () {
+                $('.js-navbar-vertical-aside-toggle-invoker i').tooltip('hide');
+            });
+
+            // INITIALIZATION OF MEGA MENU
+            // =======================================================
+            var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
+                desktop: {
+                    position: 'left'
+                }
+            }).init();
+
+
+            // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+            // =======================================================
+            var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
+
+
+            // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+            // =======================================================
+            $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
+
+            $(".js-nav-tooltip-link").on("show.bs.tooltip", function (e) {
+                if (!$("body").hasClass("navbar-vertical-aside-mini-mode")) {
+                    return false;
+                }
+            });
+
+
+            // INITIALIZATION OF UNFOLD
+            // =======================================================
+            $('.js-hs-unfold-invoker').each(function () {
+                var unfold = new HSUnfold($(this)).init();
+            });
+
+
+            // INITIALIZATION OF FORM SEARCH
+            // =======================================================
+            $('.js-form-search').each(function () {
+                new HSFormSearch($(this)).init()
+            });
+
+
+            // INITIALIZATION OF SELECT2
+            // =======================================================
+            $('.js-select2-custom').each(function () {
+                var select2 = $.HSCore.components.HSSelect2.init($(this));
+            });
+
+
+            // INITIALIZATION OF DATERANGEPICKER
+            // =======================================================
+            $('.js-daterangepicker').daterangepicker();
+
+            $('.js-daterangepicker-times').daterangepicker({
+                timePicker: true,
+                startDate: moment().startOf('hour'),
+                endDate: moment().startOf('hour').add(32, 'hour'),
+                locale: {
+                    format: 'M/DD hh:mm A'
+                }
+            });
+
+            var start = moment();
+            var end = moment();
+
+            function cb(start, end) {
+                $('#js-daterangepicker-predefined .js-daterangepicker-predefined-preview').html(start.format('MMM D') + ' - ' + end.format('MMM D, YYYY'));
+            }
+
+            $('#js-daterangepicker-predefined').daterangepicker({
+                startDate: start,
+                endDate: end,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }
+            }, cb);
+
+            cb(start, end);
+
+
+            // INITIALIZATION OF CLIPBOARD
+            // =======================================================
+            $('.js-clipboard').each(function () {
+                var clipboard = $.HSCore.components.HSClipboard.init(this);
+            });
+        });
+    </script>
+    <script src="https://efood-admin.6amtech.com/public/assets/admin/vendor/chart.js/dist/Chart.min.js"></script>
+    <script
+        src="https://efood-admin.6amtech.com/public/assets/admin/vendor/chartjs-chart-matrix/dist/chartjs-chart-matrix.min.js"></script>
+    <script src="https://efood-admin.6amtech.com/public/assets/admin/js/hs.chartjs-matrix.js"></script>
+    <script>
+        $(document).on('ready', function () {
+
+            // INITIALIZATION OF FLATPICKR
+            // =======================================================
+            $('.js-flatpickr').each(function () {
+                $.HSCore.components.HSFlatpickr.init($(this));
+            });
+
+
+            // INITIALIZATION OF NAV SCROLLER
+            // =======================================================
+            $('.js-nav-scroller').each(function () {
+                new HsNavScroller($(this)).init()
+            });
+
+
+            // INITIALIZATION OF DATERANGEPICKER
+            // =======================================================
+            $('.js-daterangepicker').daterangepicker();
+
+            $('.js-daterangepicker-times').daterangepicker({
+                timePicker: true,
+                startDate: moment().startOf('hour'),
+                endDate: moment().startOf('hour').add(32, 'hour'),
+                locale: {
+                    format: 'M/DD hh:mm A'
+                }
+            });
+
+            var start = moment();
+            var end = moment();
+
+            function cb(start, end) {
+                $('#js-daterangepicker-predefined .js-daterangepicker-predefined-preview').html(start.format('MMM D') + ' - ' + end.format('MMM D, YYYY'));
+            }
+
+            $('#js-daterangepicker-predefined').daterangepicker({
+                startDate: start,
+                endDate: end,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }
+            }, cb);
+
+            cb(start, end);
+
+
+            // INITIALIZATION OF CHARTJS
+            // =======================================================
+            $('.js-chart').each(function () {
+                $.HSCore.components.HSChartJS.init($(this));
+            });
+
+            var updatingChart = $.HSCore.components.HSChartJS.init($('#updatingData'));
+
+            // Call when tab is clicked
+            $('[data-toggle="chart"]').click(function (e) {
+                let keyDataset = $(e.currentTarget).attr('data-datasets')
+
+                // Update datasets for chart
+                updatingChart.data.datasets.forEach(function (dataset, key) {
+                    dataset.data = updatingChartDatasets[keyDataset][key];
+                });
+                updatingChart.update();
+            })
+
+
+            // INITIALIZATION OF MATRIX CHARTJS WITH CHARTJS MATRIX PLUGIN
+            // =======================================================
+            function generateHoursData() {
+                var data = [];
+                var dt = moment().subtract(365, 'days').startOf('day');
+                var end = moment().startOf('day');
+                while (dt <= end) {
+                    data.push({
+                        x: dt.format('YYYY-MM-DD'),
+                        y: dt.format('e'),
+                        d: dt.format('YYYY-MM-DD'),
+                        v: Math.random() * 24
+                    });
+                    dt = dt.add(1, 'day');
+                }
+                return data;
+            }
+
+            $.HSCore.components.HSChartMatrixJS.init($('.js-chart-matrix'), {
+                data: {
+                    datasets: [{
+                        label: 'Commits',
+                        data: generateHoursData(),
+                        width: function (ctx) {
+                            var a = ctx.chart.chartArea;
+                            return (a.right - a.left) / 70;
+                        },
+                        height: function (ctx) {
+                            var a = ctx.chart.chartArea;
+                            return (a.bottom - a.top) / 10;
+                        }
+                    }]
+                },
+                options: {
+                    tooltips: {
+                        callbacks: {
+                            title: function () {
+                                return '';
+                            },
+                            label: function (item, data) {
+                                var v = data.datasets[item.datasetIndex].data[item.index];
+
+                                if (v.v.toFixed() > 0) {
+                                    return '<span class="font-weight-bold">' + v.v.toFixed() + ' hours</span> on ' + v.d;
+                                } else {
+                                    return '<span class="font-weight-bold">No time</span> on ' + v.d;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        xAxes: [{
+                            position: 'bottom',
+                            type: 'time',
+                            offset: true,
+                            time: {
+                                unit: 'week',
+                                round: 'week',
+                                displayFormats: {
+                                    week: 'MMM'
+                                }
+                            },
+                            ticks: {
+                                "labelOffset": 20,
+                                "maxRotation": 0,
+                                "minRotation": 0,
+                                "fontSize": 12,
+                                "fontColor": "rgba(22, 52, 90, 0.5)",
+                                "maxTicksLimit": 12,
+                            },
+                            gridLines: {
+                                display: false
+                            }
+                        }],
+                        yAxes: [{
+                            type: 'time',
+                            offset: true,
+                            time: {
+                                unit: 'day',
+                                parser: 'e',
+                                displayFormats: {
+                                    day: 'ddd'
+                                }
+                            },
+                            ticks: {
+                                "fontSize": 12,
+                                "fontColor": "rgba(22, 52, 90, 0.5)",
+                                "maxTicksLimit": 2,
+                            },
+                            gridLines: {
+                                display: false
+                            }
+                        }]
+                    }
+                }
+            });
+
+
+            // INITIALIZATION OF CLIPBOARD
+            // =======================================================
+            $('.js-clipboard').each(function () {
+                var clipboard = $.HSCore.components.HSClipboard.init(this);
+            });
+
+
+            // INITIALIZATION OF CIRCLES
+            // =======================================================
+            $('.js-circle').each(function () {
+                var circle = $.HSCore.components.HSCircles.init($(this));
+            });
+        });
+    </script>
+    <script>
+        $('#from_date,#to_date').change(function () {
+            let fr = $('#from_date').val();
+            let to = $('#to_date').val();
+            if (fr != '' && to != '') {
+                if (fr > to) {
+                    $('#from_date').val('');
+                    $('#to_date').val('');
+                    toastr.error('Invalid date range!', Error, {
+                        CloseButton: true,
+                        ProgressBar: true
+                    });
+                }
+            }
+
+        })
+    </script>
+    <audio id="myAudio">
+        <source src="https://efood-admin.6amtech.com/public/assets/admin/sound/notification.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        var audio = document.getElementById("myAudio");
+
+        function playAudio() {
+            audio.play();
+        }
+
+        function pauseAudio() {
+            audio.pause();
+        }
+    </script>
+    <script>
+        setInterval(function () {
+            $.get({
+                url: 'https://efood-admin.6amtech.com/admin/get-restaurant-data',
+                dataType: 'json',
+                success: function (response) {
+                    let data = response.data;
+                    if (data.new_order > 0) {
+                        playAudio();
+                        $('#popup-modal').appendTo("body").modal('show');
+                    }
+                },
+            });
+        }, 10000);
+
+        function check_order() {
+            location.href = 'https://efood-admin.6amtech.com/admin/orders/list/pending';
+        }
+
+        function route_alert(route, message) {
+            Swal.fire({
+                title: 'Are you sure ',
+                text: message,
+                type: 'warning',
+                showCancelButton: true,
+                cancelButtonColor: 'default',
+                confirmButtonColor: '#FC6A57',
+                cancelButtonText: 'No',
+                confirmButtonText: 'Yes',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    location.href = route;
+                }
+            })
+        }
+
+        function form_alert(id, message) {
+            Swal.fire({
+                title: 'Are you sure ',
+                text: message,
+                type: 'warning',
+                showCancelButton: true,
+                cancelButtonColor: 'default',
+                confirmButtonColor: '#FC6A57',
+                cancelButtonText: 'No',
+                confirmButtonText: 'Yes',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    $('#' + id).submit()
+                }
+            })
+        }
+    </script>
+    <script>
+        function call_demo() {
+            toastr.info('This option is disabled for demo!', {
+                CloseButton: true,
+                ProgressBar: true
+            });
+        }
+    </script>
+    <script>
+        //Internet Status Check
+        window.addEventListener('online', function () {
+            toastr.success('Became online');
+        });
+        window.addEventListener('offline', function () {
+            toastr.error('Became offline');
+        });
+
+        //Internet Status Check (after any event)
+        document.body.addEventListener("click", function (event) {
+            if (window.navigator.onLine === false) {
+                toastr.error('You are in offline');
+                event.preventDefault();
+            }
+        }, false);
+    </script>
+
+    <script>
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="https://efood-admin.6amtech.com/public/assets/admin/vendor/babel-polyfill/polyfill.min.js"><\/script>');
+    </script>
+</body>
+
+</html>

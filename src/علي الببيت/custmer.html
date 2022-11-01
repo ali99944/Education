@@ -1,0 +1,2412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8">
+
+    <title>Customer List</title>
+    <script src="https://kit.fontawesome.com/0d1ebe0b10.js" crossorigin="anonymous"></script>
+
+
+    <link rel="shortcut icon" href="">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://efood-admin.6amtech.com/public/assets/admin/css/vendor.min.css">
+    <link rel="stylesheet" href="https://efood-admin.6amtech.com/public/assets/admin/vendor/icon-set/style.css">
+
+    <link rel="stylesheet" href="https://efood-admin.6amtech.com/public/assets/admin/css/theme.minc619.css?v=1.0">
+    <meta name="csrf-token" content="rQIRJ5mxK5rFxTsFasPMpCkxSE8GeBsKzE3w44O8">
+    <style>
+        .scroll-bar {
+            max-height: calc(100vh - 100px);
+            overflow-y: auto !important;
+        }
+
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 1px #cfcfcf;
+            /*border-radius: 5px;*/
+        }
+
+        ::-webkit-scrollbar {
+            width: 3px;
+            height: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            /*border-radius: 5px;*/
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FC6A57;
+        }
+
+        .flex-start {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .flex-end {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .flex-inline {
+            display: inline-flex;
+        }
+
+        .flex-between {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+    <script
+        src="https://efood-admin.6amtech.com/public/assets/admin/vendor/hs-navbar-vertical-aside/hs-navbar-vertical-aside-mini-cache.js"></script>
+    <link rel="stylesheet" href="https://efood-admin.6amtech.com/public/assets/admin/css/toastr.css">
+</head>
+
+<body class="footer-offset">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="loading" style="display: none;">
+                    <div style="position: fixed;z-index: 9999; left: 40%;top: 37% ;width: 100%">
+                        <img width="200" src="https://efood-admin.6amtech.com/public/assets/admin/img/loader.gif">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="styleSwitcherDropdown" class="hs-unfold-content sidebar sidebar-bordered sidebar-box-shadow"
+        style="width: 35rem;">
+        <div class="card card-lg border-0 h-100">
+            <div class="card-header align-items-start">
+                <div class="mr-2">
+                    <h3 class="card-header-title">Front Builder</h3>
+                    <p>Customize your overview page layout. Choose the one that best fits your needs.</p>
+                </div>
+
+                <a class="js-hs-unfold-invoker btn btn-icon btn-xs btn-ghost-dark" href="javascript:;"
+                    data-hs-unfold-options='{
+                  "target": "#styleSwitcherDropdown",
+                  "type": "css-animation",
+                  "animationIn": "fadeInRight",
+                  "animationOut": "fadeOutRight",
+                  "hasOverlay": true,
+                  "smartPositionOff": true
+                 }'>
+                    <i class="tio-clear tio-lg"></i>
+                </a>
+
+            </div>
+
+            <div class="card-body sidebar-scrollbar">
+                <h4 class="mb-1">Layout skins <span id="js-builder-disabled" class="badge badge-soft-danger"
+                        style="opacity: 0">Disabled</span></h4>
+                <p>3 kinds of layout skins to choose from.</p>
+                <div class="row gx-2 mb-5">
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="layoutSkinsRadio"
+                                    id="layoutSkinsRadio1" checked value="default">
+                                <label class="custom-checkbox-card-label" for="layoutSkinsRadio1">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Default</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="layoutSkinsRadio"
+                                    id="layoutSkinsRadio2" value="navbar-dark">
+                                <label class="custom-checkbox-card-label" for="layoutSkinsRadio2">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Dark</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="layoutSkinsRadio"
+                                    id="layoutSkinsRadio3" value="navbar-light">
+                                <label class="custom-checkbox-card-label" for="layoutSkinsRadio3">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Light</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h4 class="mb-1">Sidebar layout options</h4>
+                <p>Choose between standard navigation sizing, mini or even compact with icons.</p>
+                <div class="row gx-2 mb-5">
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="sidebarLayoutOptions"
+                                    id="sidebarLayoutOptions1" checked value="default">
+                                <label class="custom-checkbox-card-label" for="sidebarLayoutOptions1">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Default</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="sidebarLayoutOptions"
+                                    id="sidebarLayoutOptions2" value="navbar-vertical-aside-compact-mode">
+                                <label class="custom-checkbox-card-label" for="sidebarLayoutOptions2">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Compact</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="sidebarLayoutOptions"
+                                    id="sidebarLayoutOptions3" value="navbar-vertical-aside-mini-mode">
+                                <label class="custom-checkbox-card-label" for="sidebarLayoutOptions3">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Mini</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h4 class="mb-1">Header layout options</h4>
+                <p>Choose the primary navigation of your header layout.</p>
+                <div class="row gx-2">
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="headerLayoutOptions"
+                                    id="headerLayoutOptions1" value="single">
+                                <label class="custom-checkbox-card-label" for="headerLayoutOptions1">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Default (Fluid)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="headerLayoutOptions"
+                                    id="headerLayoutOptions2" value="single-container">
+                                <label class="custom-checkbox-card-label" for="headerLayoutOptions2">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Default (Container)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="headerLayoutOptions"
+                                    id="headerLayoutOptions3" value="double">
+                                <label class="custom-checkbox-card-label" for="headerLayoutOptions3">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Double line (Fluid)</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4 text-center mt-2">
+                        <div class="text-center">
+                            <div class="custom-checkbox-card mb-2">
+                                <input type="radio" class="custom-checkbox-card-input" name="headerLayoutOptions"
+                                    id="headerLayoutOptions4" value="double-container">
+                                <label class="custom-checkbox-card-label" for="headerLayoutOptions4">
+                                    <img class="custom-checkbox-card-img"
+                                        src="https://efood-admin.6amtech.com/public/assets/admin"
+                                        alt="Image Description">
+                                </label>
+                                <span class="custom-checkbox-card-text">Double line (Container)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-footer">
+                <div class="row gx-2">
+                    <div class="col">
+                        <button type="button" id="js-builder-reset" class="btn btn-block btn-lg btn-white">
+                            <i class="tio-restore"></i> Reset
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button type="button" id="js-builder-preview" class="btn btn-block btn-lg btn-primary">
+                            <i class="tio-visible"></i> Preview
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="headerMain" class="d-none">
+        <header id="header"
+            class="navbar navbar-expand-lg navbar-fixed navbar-height navbar-flush navbar-container navbar-bordered">
+            <div class="navbar-nav-wrap">
+                <div class="navbar-brand-wrapper">
+
+                    <a class="navbar-brand" href="https://efood-admin.6amtech.com/admin" aria-label="">
+                        <img class="navbar-brand-logo"
+                            onerror="this.src='https://efood-admin.6amtech.com/public/assets/admin/img/160x160/img1.jpg'"
+                            src="https://efood-admin.6amtech.com/storage/app/public/restaurant/2021-02-27-603aa32c36d89.png"
+                            alt="Logo">
+                        <img class="navbar-brand-logo-mini"
+                            onerror="this.src='https://efood-admin.6amtech.com/public/assets/admin/img/160x160/img1.jpg'"
+                            src="https://efood-admin.6amtech.com/storage/app/public/restaurant/2021-02-27-603aa32c36d89.png"
+                            alt="Logo">
+                    </a>
+
+                </div>
+                <div class="navbar-nav-wrap-content-left">
+
+                    <button type="button" class="js-navbar-vertical-aside-toggle-invoker close mr-3">
+                        <i class="tio-first-page navbar-vertical-aside-toggle-short-align" data-toggle="tooltip"
+                            data-placement="right" title="Collapse"></i>
+                        <i class="tio-last-page navbar-vertical-aside-toggle-full-align"
+                            data-template='<div class="tooltip d-none d-sm-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
+                            data-toggle="tooltip" data-placement="right" title="Expand"></i>
+                    </button>
+
+                </div>
+
+                <div class="navbar-nav-wrap-content-right">
+
+                    <ul class="navbar-nav align-items-center flex-row">
+                        <li class="nav-item d-none d-sm-inline-block">
+                            <div class="hs-unfold">
+                                <div style="background:white;padding: 9px;border-radius: 5px;">
+                                    <div class="topbar-text dropdown disable-autohide mr-3 text-capitalize">
+                                        <a class="topbar-link dropdown-toggle" href="#" data-toggle="dropdown"
+                                            style="color: black!important;">
+                                            en
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item pb-1"
+                                                    href="https://efood-admin.6amtech.com/admin/lang/en">
+                                                    <span style="text-transform: capitalize">English</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item pb-1"
+                                                    href="https://efood-admin.6amtech.com/admin/lang/ar">
+                                                    <span style="text-transform: capitalize">Arabic - العربية</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+
+                            <div class="hs-unfold">
+                                <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle"
+                                    href="https://efood-admin.6amtech.com/admin/message/list">
+                                    <i class="tio-messages-outlined"></i>
+                                </a>
+                            </div>
+
+                        </li>
+                        <li class="nav-item d-none d-sm-inline-block">
+
+                            <div class="hs-unfold">
+                                <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle"
+                                    href="https://efood-admin.6amtech.com/admin/orders/list/pending">
+                                    <i class="tio-shopping-cart-outlined"></i>
+                                </a>
+                            </div>
+
+                        </li>
+                        <li class="nav-item">
+
+                            <div class="hs-unfold">
+                                <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper" href="javascript:;"
+                                    data-hs-unfold-options='{
+                                     "target": "#accountNavbarDropdown",
+                                     "type": "css-animation"
+                                   }'>
+                                    <div class="avatar avatar-sm avatar-circle">
+                                        <img class="avatar-img"
+                                            onerror="this.src='https://efood-admin.6amtech.com/public/assets/admin/img/160x160/img1.jpg'"
+                                            src="https://efood-admin.6amtech.com/storage/app/public/admin/"
+                                            alt="Image Description">
+                                        <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                                    </div>
+                                </a>
+                                <div id="accountNavbarDropdown"
+                                    class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account"
+                                    style="width: 16rem;">
+                                    <div class="dropdown-item-text">
+                                        <div class="media align-items-center">
+                                            <div class="avatar avatar-sm avatar-circle mr-2">
+                                                <img class="avatar-img"
+                                                    onerror="this.src='https://efood-admin.6amtech.com/public/assets/admin/img/160x160/img1.jpg'"
+                                                    src="https://efood-admin.6amtech.com/storage/app/public/admin/"
+                                                    alt="Image Description">
+                                            </div>
+                                            <div class="media-body">
+                                                <span class="card-title h5">admin</span>
+                                                <span class="card-text"><a href="/cdn-cgi/l/email-protection"
+                                                        class="__cf_email__"
+                                                        data-cfemail="92f3f6fffbfcd2f3f6fffbfcbcf1fdff">[email&#160;protected]</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="https://efood-admin.6amtech.com/admin/settings">
+                                        <span class="text-truncate pr-2" title="Settings">Settings</span>
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:" onclick="Swal.fire({
+                                    title: 'Do you want to logout ',
+                                    showDenyButton: true,
+                                    showCancelButton: true,
+                                    confirmButtonColor: '#FC6A57',
+                                    cancelButtonColor: '#363636',
+                                    confirmButtonText: 'Yes',
+                                    cancelButtonText: `No`,
+                                    }).then((result) => {
+                                    if (result.value) {
+                                    location.href='https://efood-admin.6amtech.com/admin/auth/logout';
+                                    } else{
+                                        Swal.fire({
+                                        title: 'Canceled',
+                                        confirmButtonText: 'Okay',
+                                        })
+                                    }
+                                    })">
+                                        <span class="text-truncate pr-2" title="Sign out">Sign out</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </header>
+    </div>
+    <div id="headerFluid" class="d-none"></div>
+    <div id="headerDouble" class="d-none"></div>
+    <div id="sidebarMain" class="d-none">
+        <aside
+            class="js-navbar-vertical-aside navbar navbar-vertical-aside navbar-vertical navbar-vertical-fixed navbar-expand-xl navbar-bordered  ">
+            <div class="navbar-vertical-container text-capitalize">
+                <div class="navbar-vertical-footer-offset">
+                    <div class="navbar-brand-wrapper justify-content-between">
+
+                        <a class="navbar-brand" href="https://efood-admin.6amtech.com/admin" aria-label="Front">
+                            <img class="navbar-brand-logo"
+                                onerror="this.src='https://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'"
+                                src="https://efood-admin.6amtech.com/storage/app/public/restaurant/2021-02-27-603aa32c36d89.png"
+                                alt="Logo">
+                            <img class="navbar-brand-logo-mini"
+                                onerror="this.src='https://efood-admin.6amtech.com/public/assets/admin/img/160x160/img2.jpg'"
+                                src="https://efood-admin.6amtech.com/storage/app/public/restaurant/2021-02-27-603aa32c36d89.png"
+                                alt="Logo">
+                        </a>
+
+
+                        <button type="button"
+                            class="js-navbar-vertical-aside-toggle-invoker navbar-vertical-aside-toggle btn btn-icon btn-xs btn-ghost-dark">
+                            <i class="tio-clear tio-lg"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="navbar-vertical-content">
+                        <ul class="navbar-nav navbar-nav-lg nav-tabs">
+
+                            <li class="navbar-vertical-aside-has-menu show">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link" href="./index.html"
+                                    title="Dashboards">
+                                    <i class="tio-home-vs-1-outlined nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        Dashboard
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <small class="nav-subtitle">Pos System</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:">
+                                    <i class="tio-shopping nav-icon"></i>
+                                    <span
+                                        class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">POS</span>
+                                </a>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub" style="display: none">
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./pos.html" title="Pos">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Pos</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./order list.html" title="Orders">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Orders
+                                                <span class="badge badge-info badge-pill ml-1">
+                                                    7
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <small class="nav-subtitle">Order Section</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:">
+                                    <i class="tio-shopping-cart nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        Order
+                                    </span>
+                                </a>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub" style="display: none">
+                                    <li class="nav-item ">
+                                        <a class="nav-link" href="./state_order_all.html" title="">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">
+                                                All
+                                                <span class="badge badge-info badge-pill ml-1">
+                                                    46
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./pendingorder.html" title="">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">
+                                                Pending
+                                                <span class="badge badge-soft-info badge-pill ml-1">
+                                                    23
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./confirm_order.html" title="">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">
+                                                Confirmed
+                                                <span class="badge badge-soft-success badge-pill ml-1">
+                                                    5
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./dlivered.html" title="">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">
+                                                Delivered
+                                                <span class="badge badge-success badge-pill ml-1">
+                                                    13
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./return_order.html" title="">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">
+                                                Returned
+                                                <span class="badge badge-soft-danger badge-pill ml-1">
+                                                    0
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./cancel.html" title="">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">
+                                                Canceled
+                                                <span class="badge badge-soft-dark badge-pill ml-1">
+                                                    2
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <small class="nav-subtitle">Product Section</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+
+
+
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:">
+                                    <i class="tio-premium-outlined nav-icon"></i>
+                                    <span
+                                        class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Product</span>
+                                </a>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub" style="display: none">
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./addprodact.html" title="Add new product">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Add New</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./productlist.html" title="Product list">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">List</span>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+
+                          
+                            <li class="nav-item">
+                                <small class="nav-subtitle" title="Layouts">Business Section</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+
+                         
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                    href="./add_cupon.html">
+                                    <i class="tio-gift nav-icon"></i>
+                                    <span
+                                        class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Coupon</span>
+                                </a>
+                            </li>
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:">
+                                    <i class="tio-settings nav-icon"></i>
+                                    <span
+                                        class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Restaurant
+                                        Settings</span>
+                                </a>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub" style="display: none">
+
+                                    <li class="nav-item ">
+                                        <a class="nav-link "
+                                            href="./admin_setting.html">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Restaurant Setup</span>
+                                        </a>
+                                    </li>
+
+                                    
+                                </ul>
+                            </li>
+
+                            
+                            <li class="nav-item">
+                                <small class="nav-subtitle" title="Layouts">Deliveryman Section</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                    href="./add_driver.html">
+                                    <i class="tio-running nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        Register
+                                    </span>
+                                </a>
+                            </li>
+
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                    href="./deliverylist.html">
+                                    <i class="tio-filter-list nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        List
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                    href="./review.html">
+                                    <i class="tio-star-outlined nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        Reviews
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <small class="nav-subtitle" title="Documentation">Customer Section</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                    href="./custmer.html">
+                                    <i class="tio-poi-user nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        Customer List
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link"
+                                    href="./point.html">
+                                    <i class="tio-format-points nav-icon"></i>
+                                    <span class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">
+                                        Point History
+                                    </span>
+                                </a>
+                            </li>
+                            
+
+                            <li class="nav-item">
+                                <div class="nav-divider"></div>
+                            </li>
+                            <li class="nav-item">
+                                <small class="nav-subtitle" title="Report and analytics">Report and analytics</small>
+                                <small class="tio-more-horizontal nav-subtitle-replacer"></small>
+                            </li>
+
+                            <li class="navbar-vertical-aside-has-menu ">
+                                <a class="js-navbar-vertical-aside-menu-link nav-link nav-link-toggle"
+                                    href="javascript:">
+                                    <i class="tio-report-outlined nav-icon"></i>
+                                    <span
+                                        class="navbar-vertical-aside-mini-mode-hidden-elements text-truncate">Reports</span>
+                                </a>
+                                <ul class="js-navbar-vertical-aside-submenu nav nav-sub" style="display: none">
+                                    <li class="nav-item ">
+                                        <a class="nav-link "
+                                            href="./earning.html">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Earning Report</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " href="./orderreport.html">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Order Report</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link "
+                                            href="./deliveryman-report.html">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">DeliveryMan Report</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link "
+                                            href="./proudctsale.html">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Product Report</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a class="nav-link "
+                                            href="./sale.html">
+                                            <span class="tio-circle nav-indicator-icon"></span>
+                                            <span class="text-truncate">Sale Report</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item" style="padding-top: 100px">
+                                <div class=""></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </aside>
+    </div>
+    <div id="sidebarCompact" class="d-none">
+    </div>
+
+    <main id="content" role="main" class="main pointer-event">
+
+        <div class="content container-fluid">
+
+            <div class="page-header">
+                <div class="row align-items-center mb-3">
+                    <div class="col-sm">
+                        <h1 class="page-header-title">Customers
+                            <span class="badge badge-soft-dark ml-2">(185)</span>
+                        </h1>
+                    </div>
+                </div>
+
+
+                <div class="js-nav-scroller hs-nav-scroller-horizontal">
+                    <span class="hs-nav-scroller-arrow-prev" style="display: none;">
+                        <a class="hs-nav-scroller-arrow-link" href="javascript:;">
+                            <i class="tio-chevron-left"></i>
+                        </a>
+                    </span>
+                    <span class="hs-nav-scroller-arrow-next" style="display: none;">
+                        <a class="hs-nav-scroller-arrow-link" href="javascript:;">
+                            <i class="tio-chevron-right"></i>
+                        </a>
+                    </span>
+
+                    <ul class="nav nav-tabs page-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Customer List</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-header flex-end">
+                    <div class="">
+                        <form action="https://efood-admin.6amtech.com/admin/customer/list" method="GET">
+                            <div class="input-group">
+                                <input id="datatableSearch_" type="search" name="search" class="form-control"
+                                    placeholder="Search" aria-label="Search" value="" required autocomplete="off">
+                                <div class="input-group-append">
+                                    <button type="submit" class="input-group-text"><i class="tio-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div class="table-responsive datatable-custom">
+                    <table
+                        class="table table-hover table-borderless table-thead-bordered table-nowrap table-align-middle card-table"
+                        style="width: 100%">
+                        <thead class="thead-light">
+                            <tr>
+                                <th class="">
+                                    ##
+                                </th>
+                                <th class="table-column-pl-0">Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Total Order</th>
+                                <th>Available Points</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="set-rows">
+                            <tr class="">
+                                <td class="">
+                                    1
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/185">
+                                        Shariful Islam
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="3e57535a4d565f4c57584b520f090f7e59535f5752105d5153">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    +8801632466063
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        0
+                                    </label>
+                                </td>
+                                <td class="show-point-185-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/185">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/185')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    2
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/184">
+                                        fatema subarna
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="81e7e0f5e4ece0c1e6ece0e8edafe2eeec">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    +8801885576623
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        1
+                                    </label>
+                                </td>
+                                <td class="show-point-184-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/184">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/184')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    3
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/183">
+                                        Test Test
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="0c78697f4c6b616d6560226f6361">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    +8801641757712
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        3
+                                    </label>
+                                </td>
+                                <td class="show-point-183-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/183">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/183')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    4
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/182">
+                                        Manpreet Banga
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="dba9b7b2bcb3afadbeb5afbea89bbcb6bab2b7f5b8b4b6">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    +919664499066
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        0
+                                    </label>
+                                </td>
+                                <td class="show-point-182-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/182">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/182')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    5
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/181">
+                                        Nwer Bsj
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="c7a6f6f6f6f687a0aaa6aeabe9a4a8aa">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    +8801965409747
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        1
+                                    </label>
+                                </td>
+                                <td class="show-point-181-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/181">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/181')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    6
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/180">
+                                        Kamrujjaman Joy
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="056f6a7c456268646c692b666a68">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    +8801733415955
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        1
+                                    </label>
+                                </td>
+                                <td class="show-point-180-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/180">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/180')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    7
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/179">
+                                        Marzahan Pili
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="15657c797c557278747c793b767a78">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    +8801624343926
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        16
+                                    </label>
+                                </td>
+                                <td class="show-point-179-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/179">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/179')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    8
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/178">
+                                        تياو وزب
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="533a3121323713343e323a3f7d303c3e">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    0870964
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        1
+                                    </label>
+                                </td>
+                                <td class="show-point-178-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/178">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/178')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    9
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/177">
+                                        Aziz Sarker
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="05647f6c7f7664776e6077647766456268646c692b666a68">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    +8801975758279
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        6
+                                    </label>
+                                </td>
+                                <td class="show-point-177-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/177">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/177')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    10
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/176">
+                                        Ashek Elahe
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="6302100b060823040e020a0f4d000c0e">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    +8801879762951
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        2
+                                    </label>
+                                </td>
+                                <td class="show-point-176-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/176">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/176')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    11
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/175">
+                                        Gustavo Dbdjdj
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="264145435547544f4966414b474f4a0845494b">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    656565
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        0
+                                    </label>
+                                </td>
+                                <td class="show-point-175-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/175">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/175')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    12
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/174">
+                                        Demo Demo
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="a3c2c7c8cad7d0cccf949ae3c4cec2cacf8dc0ccce">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    8090695843
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        0
+                                    </label>
+                                </td>
+                                <td class="show-point-174-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/174">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/174')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    13
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/173">
+                                        Habib Rahman
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="25484d574d44474c47161c654248444c490b464a48">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    01774050226
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        1
+                                    </label>
+                                </td>
+                                <td class="show-point-173-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/173">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/173')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    14
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/172">
+                                        Abc Abc
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="38595a5b78595a5b165b5755">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    01759412382
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        1
+                                    </label>
+                                </td>
+                                <td class="show-point-172-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/172">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/172')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    15
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/171">
+                                        Kabir Hossen
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="82e9e3e0ebf0c2e5efe3ebeeace1edef">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    01787816047
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        2
+                                    </label>
+                                </td>
+                                <td class="show-point-171-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/171">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/171')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    16
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/170">
+                                        Mehedi Hasan Mamun
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="8ee3ebe6ebeae7e6effdefe0e3efe3fbe0bfbdbccee9e3efe7e2a0ede1e3">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    017646356122
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        2
+                                    </label>
+                                </td>
+                                <td class="show-point-170-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/170">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/170')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    17
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/169">
+                                        AR Refat
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="d8b5bcaabdbeb9acebe0eae9ebe198bfb5b9b1b4f6bbb7b5">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    879679467
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        2
+                                    </label>
+                                </td>
+                                <td class="show-point-169-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/169">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/169')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    18
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/168">
+                                        Asad Shah
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="dcafa5b9b8f2bdafafbdb8f2afb4bdb4b49cbbb1bdb5b0f2bfb3b1">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    0333336663
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        0
+                                    </label>
+                                </td>
+                                <td class="show-point-168-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/168">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/168')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    19
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/167">
+                                        Juan Sánchez
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="f69c9a8595cfc4b6919b979f9ad895999b">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    +51970023489
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        0
+                                    </label>
+                                </td>
+                                <td class="show-point-167-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/167">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/167')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    20
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/166">
+                                        Subhan Ali
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="b6c5c3d4ded7d898ddded7c2c2d7dd8487f6d1dbd7dfda98d5d9db">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    03034659647
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        0
+                                    </label>
+                                </td>
+                                <td class="show-point-166-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/166">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/166')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    21
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/165">
+                                        Prabu Vijay
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="017173606374353241666c60686d2f626e6c">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        0
+                                    </label>
+                                </td>
+                                <td class="show-point-165-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/165">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/165')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    22
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/164">
+                                        Mahdus Abrori
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="781519101c0d0b191a0a170a11381f15191114561b1715">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    082360684025
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        0
+                                    </label>
+                                </td>
+                                <td class="show-point-164-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/164">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/164')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    23
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/163">
+                                        Khoirur Rosy
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="72001a1d010b5c06070a32151f131b1e5c111d1f">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    081918934909
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        0
+                                    </label>
+                                </td>
+                                <td class="show-point-163-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/163">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/163')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    24
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/162">
+                                        Lava Kumar
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="6f180a0d1b0e0d1c1b0a0c072f08020e0603410c0002">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    09876543210
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        0
+                                    </label>
+                                </td>
+                                <td class="show-point-162-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/162">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/162')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="">
+                                <td class="">
+                                    25
+                                </td>
+                                <td class="table-column-pl-0">
+                                    <a href="https://efood-admin.6amtech.com/admin/customer/view/161">
+                                        Pal llavi
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="e38b9393828f8f82958ad2daa3848e828a8fcd808c8e">[email&#160;protected]</a>
+                                </td>
+                                <td>
+                                    +917406887546
+                                </td>
+                                <td>
+                                    <label class="badge badge-soft-info">
+                                        0
+                                    </label>
+                                </td>
+                                <td class="show-point-161-table">
+                                    0
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="tio-settings"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item"
+                                                href="https://efood-admin.6amtech.com/admin/customer/view/161">
+                                                <i class="tio-visible"></i> View
+                                            </a>
+                                            <a class="dropdown-item" href="javascript:"
+                                                onclick="set_point_modal_data('https://efood-admin.6amtech.com/admin/customer/set-point-modal-data/161')">
+                                                <i class="tio-coin"></i> Add Point
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-12" style="overflow-x: scroll;">
+                            <nav>
+                                <ul class="pagination">
+                                    <li class="page-item disabled" aria-disabled="true" aria-label="&laquo; Previous">
+                                        <span class="page-link" aria-hidden="true">&lsaquo;</span>
+                                    </li>
+                                    <li class="page-item active" aria-current="page"><span class="page-link">1</span>
+                                    </li>
+                                    <li class="page-item"><a class="page-link"
+                                            href="https://efood-admin.6amtech.com/admin/customer/list?page=2">2</a></li>
+                                    <li class="page-item"><a class="page-link"
+                                            href="https://efood-admin.6amtech.com/admin/customer/list?page=3">3</a></li>
+                                    <li class="page-item"><a class="page-link"
+                                            href="https://efood-admin.6amtech.com/admin/customer/list?page=4">4</a></li>
+                                    <li class="page-item"><a class="page-link"
+                                            href="https://efood-admin.6amtech.com/admin/customer/list?page=5">5</a></li>
+                                    <li class="page-item"><a class="page-link"
+                                            href="https://efood-admin.6amtech.com/admin/customer/list?page=6">6</a></li>
+                                    <li class="page-item"><a class="page-link"
+                                            href="https://efood-admin.6amtech.com/admin/customer/list?page=7">7</a></li>
+                                    <li class="page-item"><a class="page-link"
+                                            href="https://efood-admin.6amtech.com/admin/customer/list?page=8">8</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link"
+                                            href="https://efood-admin.6amtech.com/admin/customer/list?page=2" rel="next"
+                                            aria-label="Next &raquo;">&rsaquo;</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal fade" id="add-point-modal" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content" id="modal-content"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer">
+            <div class="row justify-content-between align-items-center">
+                <div class="col">
+                    <p class="font-size-sm mb-0">
+                        <span class="d-none d-sm-inline-block">e-Food @ 2021</span>
+                    </p>
+                </div>
+                <div class="col-auto">
+                    <div class="d-flex justify-content-end">
+
+                        <ul class="list-inline list-separator">
+                            <li class="list-inline-item">
+                                <a class="list-separator-link"
+                                    href="https://efood-admin.6amtech.com/admin/business-settings/restaurant/restaurant-setup">Restaurant
+                                    Settings</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="list-separator-link"
+                                    href="https://efood-admin.6amtech.com/admin/settings">Profile</a>
+                            </li>
+                            <li class="list-inline-item">
+
+                                <div class="hs-unfold">
+                                    <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle"
+                                        href="https://efood-admin.6amtech.com/admin">
+                                        <i class="tio-home-outlined"></i>
+                                    </a>
+                                </div>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="popup-modal">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <center>
+                                    <h2 style="color: rgba(96,96,96,0.68)">
+                                        <i class="tio-shopping-cart-outlined"></i> You have new order Check Please.
+                                    </h2>
+                                    <hr>
+                                    <button onclick="check_order()" class="btn btn-primary">Ok let me check</button>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://efood-admin.6amtech.com/public/assets/admin/js/custom.js"></script>
+
+
+    <script src="https://efood-admin.6amtech.com/public/assets/admin/js/vendor.min.js"></script>
+    <script src="https://efood-admin.6amtech.com/public/assets/admin/js/theme.min.js"></script>
+    <script src="https://efood-admin.6amtech.com/public/assets/admin/js/sweet_alert.js"></script>
+    <script src="https://efood-admin.6amtech.com/public/assets/admin/js/toastr.js"></script>
+    <script type="text/javascript"></script>
+
+    <script>
+        $(document).on('ready', function () {
+            // ONLY DEV
+            // =======================================================
+            if (window.localStorage.getItem('hs-builder-popover') === null) {
+                $('#builderPopover').popover('show')
+                    .on('shown.bs.popover', function () {
+                        $('.popover').last().addClass('popover-dark')
+                    });
+
+                $(document).on('click', '#closeBuilderPopover', function () {
+                    window.localStorage.setItem('hs-builder-popover', true);
+                    $('#builderPopover').popover('dispose');
+                });
+            } else {
+                $('#builderPopover').on('show.bs.popover', function () {
+                    return false
+                });
+            }
+            // END ONLY DEV
+            // =======================================================
+
+            // BUILDER TOGGLE INVOKER
+            // =======================================================
+            $('.js-navbar-vertical-aside-toggle-invoker').click(function () {
+                $('.js-navbar-vertical-aside-toggle-invoker i').tooltip('hide');
+            });
+
+            // INITIALIZATION OF MEGA MENU
+            // =======================================================
+            var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
+                desktop: {
+                    position: 'left'
+                }
+            }).init();
+
+
+            // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+            // =======================================================
+            var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
+
+
+            // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+            // =======================================================
+            $('.js-nav-tooltip-link').tooltip({ boundary: 'window' })
+
+            $(".js-nav-tooltip-link").on("show.bs.tooltip", function (e) {
+                if (!$("body").hasClass("navbar-vertical-aside-mini-mode")) {
+                    return false;
+                }
+            });
+
+
+            // INITIALIZATION OF UNFOLD
+            // =======================================================
+            $('.js-hs-unfold-invoker').each(function () {
+                var unfold = new HSUnfold($(this)).init();
+            });
+
+
+            // INITIALIZATION OF FORM SEARCH
+            // =======================================================
+            $('.js-form-search').each(function () {
+                new HSFormSearch($(this)).init()
+            });
+
+
+            // INITIALIZATION OF SELECT2
+            // =======================================================
+            $('.js-select2-custom').each(function () {
+                var select2 = $.HSCore.components.HSSelect2.init($(this));
+            });
+
+
+            // INITIALIZATION OF DATERANGEPICKER
+            // =======================================================
+            $('.js-daterangepicker').daterangepicker();
+
+            $('.js-daterangepicker-times').daterangepicker({
+                timePicker: true,
+                startDate: moment().startOf('hour'),
+                endDate: moment().startOf('hour').add(32, 'hour'),
+                locale: {
+                    format: 'M/DD hh:mm A'
+                }
+            });
+
+            var start = moment();
+            var end = moment();
+
+            function cb(start, end) {
+                $('#js-daterangepicker-predefined .js-daterangepicker-predefined-preview').html(start.format('MMM D') + ' - ' + end.format('MMM D, YYYY'));
+            }
+
+            $('#js-daterangepicker-predefined').daterangepicker({
+                startDate: start,
+                endDate: end,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }
+            }, cb);
+
+            cb(start, end);
+
+
+            // INITIALIZATION OF CLIPBOARD
+            // =======================================================
+            $('.js-clipboard').each(function () {
+                var clipboard = $.HSCore.components.HSClipboard.init(this);
+            });
+        });
+    </script>
+    <script>
+        $('#search-form').on('submit', function () {
+            var formData = new FormData(this);
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.post({
+                url: 'https://efood-admin.6amtech.com/admin/customer/search',
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                beforeSend: function () {
+                    $('#loading').show();
+                },
+                success: function (data) {
+                    $('#set-rows').html(data.view);
+                    $('.card-footer').hide();
+                },
+                complete: function () {
+                    $('#loading').hide();
+                },
+            });
+        });
+
+        function add_point(form_id, route, customer_id) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.post({
+                url: route,
+                data: $('#' + form_id).serialize(),
+                beforeSend: function () {
+                    $('#loading').show();
+                },
+                success: function (data) {
+                    $('.show-point-' + customer_id).text('( Available Point :  ' + data.updated_point + ' )');
+                    $('.show-point-' + customer_id + '-table').text(data.updated_point);
+                },
+                complete: function () {
+                    $('#loading').hide();
+                },
+            });
+        }
+
+        function set_point_modal_data(route) {
+            $.get({
+                url: route,
+                beforeSend: function () {
+                    $('#loading').show();
+                },
+                success: function (data) {
+                    $('#add-point-modal').modal('show');
+                    $('#modal-content').html(data.view);
+                },
+                complete: function () {
+                    $('#loading').hide();
+                },
+            });
+        }
+    </script>
+    <audio id="myAudio">
+        <source src="https://efood-admin.6amtech.com/public/assets/admin/sound/notification.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        var audio = document.getElementById("myAudio");
+
+        function playAudio() {
+            audio.play();
+        }
+
+        function pauseAudio() {
+            audio.pause();
+        }
+    </script>
+    <script>
+        setInterval(function () {
+            $.get({
+                url: 'https://efood-admin.6amtech.com/admin/get-restaurant-data',
+                dataType: 'json',
+                success: function (response) {
+                    let data = response.data;
+                    if (data.new_order > 0) {
+                        playAudio();
+                        $('#popup-modal').appendTo("body").modal('show');
+                    }
+                },
+            });
+        }, 10000);
+
+        function check_order() {
+            location.href = 'https://efood-admin.6amtech.com/admin/orders/list/pending';
+        }
+
+        function route_alert(route, message) {
+            Swal.fire({
+                title: 'Are you sure ',
+                text: message,
+                type: 'warning',
+                showCancelButton: true,
+                cancelButtonColor: 'default',
+                confirmButtonColor: '#FC6A57',
+                cancelButtonText: 'No',
+                confirmButtonText: 'Yes',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    location.href = route;
+                }
+            })
+        }
+
+        function form_alert(id, message) {
+            Swal.fire({
+                title: 'Are you sure ',
+                text: message,
+                type: 'warning',
+                showCancelButton: true,
+                cancelButtonColor: 'default',
+                confirmButtonColor: '#FC6A57',
+                cancelButtonText: 'No',
+                confirmButtonText: 'Yes',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    $('#' + id).submit()
+                }
+            })
+        }
+    </script>
+    <script>
+        function call_demo() {
+            toastr.info('This option is disabled for demo!', {
+                CloseButton: true,
+                ProgressBar: true
+            });
+        }
+    </script>
+    <script>
+        //Internet Status Check
+        window.addEventListener('online', function () {
+            toastr.success('Became online');
+        });
+        window.addEventListener('offline', function () {
+            toastr.error('Became offline');
+        });
+
+        //Internet Status Check (after any event)
+        document.body.addEventListener("click", function (event) {
+            if (window.navigator.onLine === false) {
+                toastr.error('You are in offline');
+                event.preventDefault();
+            }
+        }, false);
+    </script>
+
+    <script>
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="https://efood-admin.6amtech.com/public/assets/admin/vendor/babel-polyfill/polyfill.min.js"><\/script>');
+    </script>
+</body>
+
+</html>
